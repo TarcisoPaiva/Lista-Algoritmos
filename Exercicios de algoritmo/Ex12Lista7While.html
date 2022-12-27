@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    <h2>TABUADA</h2>
+
+    Selecione a Tabuada:<select id="Sel1">
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    </select><br>
+    Até que número a Tabuada deve ser Construida: <input id="Ate1"><br>
+    <button onclick="Ver()">Ver Tabuada</button>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Ver(){
+        div1.innerHTML = ""
+
+        var Contador = 0
+        var Ate = Number(Ate1.value)
+        var Tabuada = Number(Sel1.value)
+
+        while(Contador < Ate){
+        Contador++
+
+        div1.innerHTML += `${Tabuada} * ${Contador} = <b>${Tabuada * Contador}</b> <br>`
+
+        }
+
+    }
+</script>

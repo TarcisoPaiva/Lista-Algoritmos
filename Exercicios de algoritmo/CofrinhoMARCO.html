@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofrinho</title>
+</head>
+<body>
+    <h2>Cofrinho</h2>
+    Valor Guardado: <input id="Guardado1"><br>
+    Valor Poupado por mês: <input id="Poupado1"><br>
+    Quantidade de Meses: <input id="Meses1"><br>
+
+    <button onclick="Poupar()">Vamos Poupar!</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
+<script>
+    function Poupar(){
+
+        var Guardado = Number(Guardado1.value)
+        var Poupado = Number(Poupado1.value)
+        var Meses = Number(Meses1.value)
+        var Contador = 0
+
+        if(Poupado <= 0){
+        alert('Dinheiro Poupado tem que ser maior que zero')
+        
+        }else if(Meses < 6 || Meses > 20){
+        alert('Quantidade de meses tem que ser entre 6 e 20')
+        
+        }else{
+            while(Contador < Meses){
+            Contador++
+
+            div1.innerHTML += `Marco tinha ${Guardado}, depois do depósito do ${Contador} Mês ele ficou com ${Guardado = Guardado + Poupado}<br>`
+            
+            div2.innerHTML = `Você começou com ${Guardado1.value} Durante os ${Contador} Meses você poupou ${Meses * Guardado1.value} R$ e agora você tem ${Guardado}`
+            }
+        }
+
+    }
+</script>

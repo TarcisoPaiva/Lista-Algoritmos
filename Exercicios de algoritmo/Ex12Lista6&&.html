@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Fidelidade</title>
+</head>
+<body>
+    <h2>Cartão Fidelidade</h2>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/1034/1034795.png" width="150px"></div>
+    Quantidades de Passagens: <input id="Passagens1">
+    <button onclick="Comprar()">Comprar</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Comprar(){
+        var QtdPassagens = Number(Passagens1.value)
+        var Valor = 4.40
+        var Total = QtdPassagens * Valor
+
+        if(QtdPassagens >= 8 && QtdPassagens <=19){
+        Total *= 0.97
+        Mostrar()
+    
+        }else if(QtdPassagens >= 20 && QtdPassagens <= 49){
+        Total *= 0.95
+        Mostrar()
+
+        }else if(QtdPassagens == 50){
+        Total *= 0.93
+        Mostrar()
+
+        }else{
+        alert('Quantidade Inválida para o Fidelidade')
+        }
+
+        function Mostrar(){
+        div1.innerHTML = `${QtdPassagens} Passagens, fica no valor de: R$${Total.toFixed(2)}`
+        }
+    }
+</script>

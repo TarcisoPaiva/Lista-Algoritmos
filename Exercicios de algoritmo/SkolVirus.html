@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkolVirus</title>
+</head>
+<body>
+    Quantidade de pessoas atualmente infectadas: <input id="pessoasInfectadas">
+    <button onclick="ontem()">Pessoas Infectadas ontem</button>
+    <button onclick="amanha()">Pessoas Infectadas Amanhã</button>
+    <button onclick="daquiummes()">Pessoas Infectadas daqui um mês</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    function ontem(){
+        var Infectados = 35
+        var PIontem = Number(pessoasInfectadas.value) - Infectados
+        var PIamanha = Number(pessoasInfectadas.value) + Infectados
+        var PImes = Number(pessoasInfectadas.value) + 1050
+
+        div1.innerHTML = `Ontem havia ${PIontem} Infectados`
+    }
+    function amanha(){
+        var Infectados = 35
+        var PIontem = Number(pessoasInfectadas.value) - Infectados
+        var PIamanha = Number(pessoasInfectadas.value) + Infectados
+        var PImes = Number(pessoasInfectadas.value) + 1050
+
+        div2.innerHTML = `Amanhã Haverá ${PIamanha} Infectados`
+    }
+    function daquiummes(){
+        var Infectados = 35
+        var PIontem = Number(pessoasInfectadas.value) - Infectados
+        var PIamanha = Number(pessoasInfectadas.value) + Infectados
+        var PImes = Number(pessoasInfectadas.value) + 1050
+
+        div3.innerHTML = `Daqui um mês Haverá ${PImes}`
+    }
+</script>

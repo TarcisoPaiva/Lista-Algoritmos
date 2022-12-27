@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex21</title>
+</head>
+<body>
+    Quantidade de elefantes: <input id="QtdElefantes1"><br>
+    <button onclick="Atazanar()">Atazanar Médium</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Atazanar(){
+
+        var QtdElefantes = Number(QtdElefantes1.value)
+        var Incomodam = "Incomodam"
+
+        for(var Contador = 0; Contador <= QtdElefantes;){
+            Contador++
+            if(Contador != 1){
+            div1.innerHTML += `1 Elefante incomodam muita gente<br>`
+            div1.innerHTML += `${Contador} Elefante ${Incomodam += ' Incomodam '} muito mais<br>`
+        }
+        }
+    }
+</script>

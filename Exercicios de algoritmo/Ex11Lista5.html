@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto INSS</title>
+    <style>
+        body{
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/8306/8306543.png" style="width: 200px;"></div>
+    Digite Seu Salário: <input id="Sal">
+    <select id="Sel1">
+    <option value="">-Descontos</option>
+    <option value="0.10">INSS</option>
+    <option value="0.20">IR</option>
+    <option value="0.05">VT</option>
+    </select>
+    <button onclick="Ver()">Ver Desconto</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Ver(){
+        var Salario = Sal.value
+        var Lista = Sel1.value
+        var Desconto = Salario * Lista
+
+        if(Lista != ''){
+        div1.innerHTML = `Valor desse desconto: ${Desconto}R$`
+    }
+    }
+</script>

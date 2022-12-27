@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z</title>
+    <style>
+       
+       body{
+        
+        background-image: url('https://i.pinimg.com/originals/e3/78/90/e37890c08db1ac5346ca7ca49b9c4450.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:contain;
+        background-attachment: fixed;
+        
+       }
+       button{
+        border-radius: 10px;
+        margin: 2px;
+        background: none;
+        border: solid;
+        padding: 5px 5px;
+        cursor: pointer;
+       }
+
+    </style>
+</head>
+<body>
+    
+    <div id="ImagemVegeta"><img src="Vegeta.png" style="width: 250px;"></div>
+    <div style="background-color: red; height: 13px; width: 250px;" id="VidaVegeta1"></div>
+    
+    <div id="Botao">
+    <button onclick="ApanharVegeta()">Apanhar</button>
+    </div>
+    
+    <div id="ImagemGoku"><img src="Goku.png" style="width: 250px;"></div>
+    <div style="background-color: darkblue; height: 13px; width: 250px" id="VidaGoku1"></div>
+    <button onclick="ApanharGoku()">Apanhar</button>
+</body>
+</html>
+<script>
+    var VidaVegeta = 250
+    var VidaGoku = 250
+
+    function ApanharVegeta(){
+        if(VidaVegeta > 0){
+        VidaVegeta -=25
+        VidaVegeta1.style = `background-color: red; height: 13px; width: ${VidaVegeta}px;`
+
+        }
+        if(VidaVegeta == 0){
+           ImagemVegeta.innerHTML = `<img src="VidaGoku.png">`
+           
+        }
+        
+    }
+
+    function ApanharGoku(){
+        if(VidaGoku > 0){
+        VidaGoku -= 25
+        VidaGoku1.style = `background-color: darkblue; height: 13px; width: ${VidaGoku}px;`
+        }
+            
+        if(VidaGoku == 0){
+           ImagemGoku.innerHTML = `<img src="VidaVegeta.png">`
+           
+        }
+    }
+</script>

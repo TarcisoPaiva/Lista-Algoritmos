@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento</title>
+</head>
+<body>
+    Quantidade de Anos de Trabalho: <input id="Anos1"><br>
+    Kg de Trigo por Héctare: <input id="Trigo1"><br>
+    Quantidade de dias Faltados no Trabalho: <input id="Faltas1"><br>
+    <button onclick="Deu()">Deu Match?</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Deu(){
+    var Anos = Anos1.value
+    var Trigo = Trigo1.value
+    var Faltas = Faltas1.value
+
+    if(Anos >= 5 && Trigo >= 300 && Faltas <= 5){
+    div1.innerHTML = `<b>A MINHA FILHA SERÁ SUA</b> <br> <img src="https://cdn-icons-png.flaticon.com/512/3074/3074076.png" style = width:400px;>`
+    
+    }else{
+    div1.innerHTML = `<b>DEU RUIM! TRABALHE MAIS</b> <br> <img src="https://cdn-icons-png.flaticon.com/512/6185/6185679.png" style = width:400px;>`
+    }
+    }
+</script>

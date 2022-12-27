@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz</title>
+</head>
+<body>
+    Digite um número <input id="numero1">
+    Digite outro número <input id="numero2">
+    <button onclick="calcular()">Calcular Raiz</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var Raiz = Number(numero1.value) ** Number(numero2.value / 2)
+        div1.innerHTML = `A ${numero1.value} de ${numero2.value} é ${Raiz}`
+    }
+</script>

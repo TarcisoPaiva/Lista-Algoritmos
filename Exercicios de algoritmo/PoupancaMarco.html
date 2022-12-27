@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poupança</title>
+</head>
+<body>
+    <h1>Poupança do Marco</h1>
+    Valor guardado: <input id="Guardado1"><br>
+    Valor poupado por mês: <input id="Poupado1"><br>
+    Quantidade de Meses: <input id="Meses1"><br>
+    Percentual de Juros: <input id="Juros1"><br>
+    <button onclick="Poupar()">Vamos Poupar</button>
+    <div id="div1"></div>
+ 
+</body>
+</html>
+<script>
+    function Poupar(){
+        div1.innerHTML = ""
+        var Contador = 0
+        var Guardado = Number(Guardado1.value)
+        var Poupado = Number(Poupado1.value)
+        var Meses = Number(Meses1.value)
+        var Juros = Number(Juros1.value)
+        var DescobrirJuros = (Guardado * Juros) / 100
+        var SaldoFinal = Guardado + Poupado + DescobrirJuros
+        
+
+        if(Poupado <= 0){
+            alert('Dinheiro Poupado tem que ser maior que zero')
+        
+        }else if(Meses <= 10){
+            alert('Meses tem que ser maior que 10')
+        
+        }else if(Juros < 0.5 || Juros > 2){
+            alert('Percentual de juros tem que está entre meio e dois')
+        
+        }else{
+            while(Contador < Meses){
+                Contador++
+                
+                if(Contador == 1){
+                div1.innerHTML += `Mês ${Contador} - Saldo Inicial = ${Guardado}R$ - Saldo Final = ${SaldoFinal}<br>`
+                
+                }else{
+                div1.innerHTML += `Mês ${Contador} - Saldo Inicial = ${(Guardado = Guardado + DescobrirJuros + Poupado).toFixed(2)}R$ - Saldo Final = ${(SaldoFinal = SaldoFinal + Poupado + DescobrirJuros).toFixed(2)}<br>`
+                }
+
+                }
+                div1.innerHTML += `-- Você Começou com R$ ${Guardado1.value}<br>-- Depositou R$ ${Poupado * Contador}<br>-- E Agora você tem R$ ${SaldoFinal}<br>-- Nesse Periodo sua Conta Rendeu R$ ${Contador * Juros}<br>-- Sua Rentabilidade foi de ${(((Contador * Juros) / (Poupado * Contador) / Guardado1.value) * 100).toFixed(2)}%` 
+        }
+                
+    }
+</script>

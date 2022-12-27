@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNH</title>
+</head>
+<body>
+    <h3>Pontos CNH</h3>
+    Quantidades de Pontos:<input id="QtdPontos">
+    <button onclick="Validar()">Validar</button>  
+    <div id="div1">Multa:</div>
+    <div id="div2"></div>
+</body>
+</html>
+<script>
+    function Validar(){
+        if(QtdPontos.value >= 20){
+        div2.innerHTML = `Voce está com a CNH Suspensa`
+        }else {
+        div2.innerHTML = `Sua Multa está no valor de ${ValorMulta1}` 
+        }
+
+        var ValorMulta1 = 78 * Number(QtdPontos.value)
+        var ValorMulta = 87 * Number(QtdPontos.value)
+        div1.innerHTML = `O valor da multa é de ${ValorMulta} R$`
+    }
+</script>

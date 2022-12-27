@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    <h2>Amor</h2>
+    Pessoa que você mais ama: <input id="Ama1"><br>
+    Quanto você ama essa pessoa: <input id="Quanto1" type="range" min="0" max="10"><br>
+    <div id="div1"></div>
+    <button onclick="Ver()">Expressar Amor</button>
+</body>
+</html>
+<script>
+    
+    function Ver(){
+        div1.innerHTML = ""
+
+        Contador = 0
+        
+        var Nome = Ama1.value
+        var Qtd = Quanto1.value
+
+        while(Contador < Qtd ){
+        div1.innerHTML += `${Nome} eu te amo! Sempre lembre disso!<br>`
+        Contador ++
+        }
+
+    }
+</script>

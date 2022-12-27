@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times</title>
+    
+</head>
+<body>
+    <h1>Times de São Paulo-SP</h1>
+    <select id="Sel1" onchange="Mostrar()">
+    <option value="">--Selecione um time</option>
+    <option value="https://logodownload.org/wp-content/uploads/2016/09/sao-paulo-logo-escudo-1.png">São Paulo</option>
+    <option value="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Figura-Corinthians-PNG.png">Corinthians</option>
+    <option value="https://upload.wikimedia.org/wikipedia/commons/9/92/LogoSantosFC.png">Santos</option>
+    <option value="https://logodetimes.com/times/palmeiras/logo-palmeiras-2048.png">Palmeiras</option>
+    </select>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Mostrar(){
+    var Times = Sel1.value
+    if(Times != ''){
+    div1.innerHTML = `<img src = ${Times} height='300'>`
+}}
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random1</title>
+</head>
+<body>
+    <h2>Sortear</h2>
+    <button onclick="Sortear()">Sortear</button>
+    <div id="div1"></div><br>
+</body>
+</html>
+<script>
+function Sortear(){
+    var Aleatorio = Math.random()
+    
+    if(Aleatorio > 0.5){
+        div1.innerHTML += ` ${Aleatorio } Eu arredondaria para 1 <br><br>`
+    }else{
+        div1.innerHTML += ` ${Aleatorio} Eu arredondaria para 0 <br><br>`
+    }
+}
+</script>

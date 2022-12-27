@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegano</title>
+</head>
+<body>
+    <h2> SOU VEGANO</h2>
+
+    <select id="Sel1">
+        <option value="">-Selecione</option>
+        <option value="0">Ovos</option>
+        <option value="1">Leite de Arroz</option>
+        <option value="0">Bacon</option>
+    </select>
+
+    <select id="Sel2">
+        <option value="">-Selecione</option>
+        <option value="0">Bife</option>
+        <option value="1">Hamburguer de Soja</option>
+        <option value="0">Frango Grelhado</option>
+    </select>
+
+    <select id="Sel3">
+        <option value="">-Selecione</option>
+        <option value="1">Picanha de Soja</option>
+        <option value="0">Cupim</option>
+        <option value="0">Coração</option>
+    </select>
+    <button onclick="Vegano()">Sou Vegano</button>
+</body>
+</html>
+<script>
+    function Vegano(){
+        var Tabela = Number(Sel1.value)
+        var Tabela2 = Number(Sel2.value)
+        var Tabela3 = Number(Sel3.value)
+
+        if(Tabela == 1 && Tabela2 == 1 && Tabela3 == 1){
+        alert('Você é vegano')
+        
+        }else{
+        alert('Você não é vegano ')
+        }
+    }
+</script>

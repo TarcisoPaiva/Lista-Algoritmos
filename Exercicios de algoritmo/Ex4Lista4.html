@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criança</title>
+</head>
+<body>
+    <h2>Peso de Crianças de 5 anos</h2>
+    Peso da Criança: <input id="PesoDaCrianca" placeholder="Kg"><br>
+    <button onclick="Avaliar()">Avaliar Peso</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Avaliar(){
+        var Peso = Number(PesoDaCrianca.value)
+
+        if(Peso == 18.3){
+        div1.innerHTML = `A Criança está com o peso perfeito`
+        }else if(Peso < 13.5){
+        div1.innerHTML = `A Criança está abaixo do peso`
+        }else if(Peso <= 21.2){
+        div1.innerHTML = `A Criança está com o peso na média`
+        }else{
+        div1.innerHTML = `A Criança está acima do peso`
+        }
+    }
+</script>

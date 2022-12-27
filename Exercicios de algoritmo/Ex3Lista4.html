@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura Humano</title>
+</head>
+<body>
+    Temperatura: <input id="Temp" placeholder="Graus°">
+    <button onclick="Ler()">Ler Temperatura</button>
+    <div id="div1"></div>
+    
+</body>
+</html>
+<script>
+    function Ler(){
+        var Temperatura = Temp.value
+
+        if(Temperatura < 14){
+        div1.innerHTML = `CONGELANTE`
+        }else if(Temperatura < 21){
+        div1.innerHTML = `COM FRIO`
+        }else if(Temperatura < 24){
+        div1.innerHTML = `CONFORTÁVEL` 
+        }else if(Temperatura < 31){
+        div1.innerHTML = `COM CALOR`
+        }else{
+        div1.innerHTML = `CALOR ESCALDANTE` 
+        }
+    }
+</script>

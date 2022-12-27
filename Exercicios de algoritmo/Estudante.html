@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudante</title>
+</head>
+<body>
+    Valor da passagem: <input id="Valor">
+    Quantas viagens fará por mês: <input id="Viagens">
+    <button onclick="Economia()">Ver Economia</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Economia(){
+        var EconomiaMes = Number(Valor.value) * Number(Viagens.value / 2)
+        div1.innerHTML = `Voce economizará ${EconomiaMes.toFixed(1)} Reais com o Bilhete de estudante`
+    }
+</script>

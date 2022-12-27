@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professora Alice</title>
+    <style>
+        #tela1{
+            border: solid 2px rgb(198, 62, 62);
+            width: 90vh;
+            color: rgb(198, 62, 62);
+        }
+        #tela2{
+            border: solid 2px rgb(198, 62, 62);
+            width: 90vh;
+            color: rgb(198, 62, 62);
+        }
+        input{
+            border-radius: 8px;
+            color: rgb(198, 62, 62);
+        }
+        button{
+            color: rgb(147, 88, 88);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="tela1" style="display: block;">
+        <h2>Análise de performace de Alunos - Registro</h2>
+        Entre com o nome do Aluno: <input id="nome1"><br>
+        Entre com a nota do Aluno: <input id="nota1"><br>
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="analisar()">Analisar</button>
+        <div id="div1"></div>
+    </div>
+
+    <div id="tela2" style="display: none;">
+        <h2>Análise de performace de Alunos - Pesquisa</h2>
+        Entre com o Intervalo da nota: <input id="de1" placeholder="De"> <input id="ate1" placeholder="Até"><br>
+        <button onclick="pesquisar()">Pesquisar</button>
+        <button onclick="voltar()">Voltar</button>
+        <div id="div2"></div>
+        <div id="div3"></div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
+<script>
+    vtNota = []
+    vtNome = []
+
+    function analisar(){
+
+        if(vtNota == ""){
+            swal({
+            title: "Erro!",
+            text: "Não existem alunos cadastrados para analisar",
+            icon: "error",
+            });
+           
+        }else{
+            tela1.style.display = "none"
+            tela2.style.display = "block"
+        }
+    }
+
+    function voltar(){
+            tela1.style.display = "block"
+            tela2.style.display = "none"
+    }
+
+    function registrar(){
+
+        var nome = nome1.value
+        var nota = Number(nota1.value)
+        let erro = 0
+
+        if(nome == "" || nota == ""){
+            swal({
+            title: "Erro!",
+            text: "Preencha todos os campos",
+            icon: "error",
+            });
+            erro++
+        }
+        if(nota < 0 || nota > 10){
+            swal({
+            title: "Erro!",
+            text: "Nota tem que estar entre 0 e 10",
+            icon: "error",
+            });
+            erro++
+        }
+        if(Number(nome)){
+            swal({
+            title: "Erro!",
+            text: "Números é inválido no campo nome",
+            icon: "error",
+            });
+            erro++
+        }
+        if(Number.isNaN(nota)){
+            swal({
+            title: "Erro!",
+            text: "Letras são inválidas no campo nota",
+            icon: "error",
+            });
+            erro++
+        }
+        if(erro == 0){
+            vtNota.push(nota)
+            vtNome.push(nome)
+            nome1.value = ""
+            nota1.value = ""
+            div1.innerHTML = ""
+            swal({
+            title: "Legal!",
+            text: "Registro Realizado com sucesso",
+            icon: "success",
+            });
+
+            for(let index = vtNome.length-1; index >= 0; index--){
+                div1.innerHTML += `${index+1}° Aluno - Nome: ${vtNome[index]} Nota: ${vtNota[index]}<br>`
+            }
+        }
+    }
+    function pesquisar(){
+
+        var de = Number(de1.value)
+        var ate = Number(ate1.value)
+        var totalAlunos = 0
+        var totalAlunosIntervalo = 0
+        var maior = 0
+        var menor = 11
+        var soma = 0
+        let erro = 0
+
+        if((de < 0 || de > 10) || ate < 0 || ate > 10){
+            swal({
+            title: "Erro!",
+            text: "Intervalo inválido, Tem que estar entre 0 e 10",
+            icon: "error",
+            });
+            erro++
+        }
+        if(de > ate){
+            swal({
+            title: "Erro!",
+            text: 'Intervalo inválido, "DE" tem que ser menor ou igual ao "ATÉ',
+            icon: "error",
+            });
+            erro++
+        }
+        if(Number.isNaN(de) || Number.isNaN(ate)){
+            swal({
+            title: "Erro!",
+            text: "Letras são inválidas",
+            icon: "error",
+            });
+            erro++
+        }
+        if(de == "" || ate == ""){
+            swal({
+            title: "Erro!",
+            text: "Preencha os campos corretamente",
+            icon: "error",
+            });
+            erro++
+        }
+        if(erro == 0){
+            div2.innerHTML = ""
+            div3.innerHTML = ""
+            
+            for(let index = 0; index< vtNota.length; index++){
+                totalAlunos++
+                soma += vtNota[index]
+
+                if(vtNota[index] >= de && vtNota[index] <= ate){
+                    totalAlunosIntervalo++
+                    div2.innerHTML += `O aluno ${vtNome[index]} ficou com a nota ${vtNota[index]}<br>`
+
+                if(vtNota[index] > maior){
+                    maior = vtNota[index]
+                }
+                if(vtNota[index] < menor){
+                    menor = vtNota[index]
+                }
+                } 
+            }
+                if(totalAlunosIntervalo == 0){
+                    div3.innerHTML = `Não existem alunos dentro desse Intervalo`
+                }else{
+                    div3.innerHTML += `<br>Total de alunos registrados: ${totalAlunos} Alunos<br> Total de alunos dentro do intervalo: ${totalAlunosIntervalo}<br> Maior nota: ${maior}<br> Menor nota: ${menor} <br> Média das notas(de todos os alunos registrados): ${soma / totalAlunos}`
+                }
+                
+        }
+    }
+</script>

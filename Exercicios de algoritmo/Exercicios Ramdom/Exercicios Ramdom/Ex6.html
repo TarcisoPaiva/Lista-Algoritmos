@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex6</title>
+</head>
+<body>
+    <h2>Momento do Dia</h2>
+    <button onclick="Sortear()">Sortear</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Sortear(){
+
+        var Sorteio = (Math.random()* 22).toFixed(0)
+
+        if(Sorteio <= 11 ){
+            div1.innerHTML = `Bom dia Flor do Dia são ${Sorteio} Hrs`
+        }else if(Sorteio <= 17){
+            div1.innerHTML = `Boa Tarde já vai tarde são ${Sorteio} Hrs`
+        }else if(Sorteio <= 23){
+            div1.innerHTML = `Boa noite durma bem são ${Sorteio} Hrs`
+        }
+    }
+</script>

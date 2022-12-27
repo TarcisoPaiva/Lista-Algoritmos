@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    <h2>Idade</h2>
+
+    Sua Idade: <input id="Idade1" onchange="Ver()">
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Ver(){
+        div1.innerHTML = ""
+        
+        var Contador = 0
+        var Idade = Idade1.value
+
+        while(Contador < Idade){
+        Contador++
+        
+        if(Contador <= 4){
+        div1.innerHTML += `${Contador} anos (Primeira Infância) <br>`
+        
+        }else if(Contador <= 6){
+        div1.innerHTML += `${Contador} anos (Pré Escolar) <br>`  
+       
+        }else if(Contador <= 10){
+        div1.innerHTML += `${Contador} anos (Segunda Infância) <br>`
+        
+        }else if(Contador < 18){
+        div1.innerHTML += `${Contador} anos (Adolescência) <br>`
+        
+        }else if(Contador <= 50){
+        div1.innerHTML += `${Contador} anos (Adulto) <br>`
+        
+        }else if(Contador <= 100){
+        div1.innerHTML += `${Contador} anos (Melhor Idade) <br>`
+        
+        }else if(Contador > 100){
+        div1.innerHTML += `${Contador} anos (Matusalém) <br>`
+        }
+        }
+
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13</title>
+</head>
+<body>
+    Quantas Xicaras de café ja tomou na vida: <input id="Cafe1"><br>
+    <button onclick="Ver()">Ver Quantidade</button>
+    <div id="div1"></div>
+    
+</body>
+</html>
+<script>
+    function Ver(){
+        div1.innerHTML = ""
+        var Cafe = Number(Cafe1.value)
+
+        for(var Contador = 0; Contador < Cafe; Contador++){
+
+            div1.innerHTML += `<img src ="https://bolosparavender.com.br/wp-content/uploads/2020/08/fazer-bolo-com-leite-em-po-da-certo-como-fazer.jpg"style = width:80px;><br>`
+            div1.innerHTML += `<img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg"style = width:80px;><br>`
+            div1.innerHTML += `<img src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg"style = width:80px;><br>`
+        }
+
+    }
+</script>

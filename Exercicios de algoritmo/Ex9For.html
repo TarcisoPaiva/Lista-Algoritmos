@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex9</title>
+</head>
+<body>
+    Limite Inferior: <input id="Inferior1"><br>
+    Limite Superior: <input id="Superior1"><br>
+    <button onclick="Contar()">Contar</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Contar(){
+        var LimiteInferior = Number(Inferior1.value)
+        var LimiteSuperior = Number(Superior1.value)
+
+        if(LimiteInferior <= 1){
+            alert('Limite inferior deve ser maior que 1')
+        
+        }else if(LimiteSuperior >= 100){
+            alert('Limite Superior tem que ser menor que 100')
+        
+        }else{
+            for(var Contador = LimiteInferior; Contador <= LimiteSuperior; Contador++){
+                if(Contador % 2 == 1){
+                    div1.innerHTML += `${Contador}<br>`
+                }
+            }
+        }
+    }
+    
+</script>

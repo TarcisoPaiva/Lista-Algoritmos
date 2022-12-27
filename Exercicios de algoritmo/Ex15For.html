@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex15</title>
+</head>
+<body>
+    Quantidade de Depósitos: <input id="Depositos1"><br>
+    Valor dos Depósitos: <input id="Valor1"><br>
+    <button onclick="Ver()">Acompanhar Grana</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Ver(){
+
+        var Depositos = Number(Depositos1.value)
+        var Valor = Number(Valor1.value)
+
+        for(Contador = 1; Contador <= Depositos; Contador++){
+
+            if(Contador == 1){
+            div1.innerHTML += `${Contador} Mês: ${Valor}<br>`
+        
+            }else{
+                if(Contador % 3 == 0){
+
+                var ValorDepositos = Number(Valor1.value)
+                Valor *= 1.01
+                div1.innerHTML += `${Contador} Mês: ${Valor = Valor + ValorDepositos}<img src="https://thumbs.dreamstime.com/b/estrela-amarela-no-vetor-branco-eps-do-fundo-cone-da-ouro-144206828.jpg" style = width:15px;"><br>`
+                
+
+                }else{
+                var ValorDepositos = Number(Valor1.value)
+                div1.innerHTML += `${Contador} Mês: ${Valor = Valor + ValorDepositos}<br>`
+
+                }
+            }
+            
+        }
+    }
+</script>

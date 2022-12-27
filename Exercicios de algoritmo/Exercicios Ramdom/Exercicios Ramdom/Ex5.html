@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5</title>
+</head>
+<body>
+    <h2>Jokepon</h2>
+    <button onclick="Jogar()">Jogar</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Jogar(){
+
+        var Sorteio = (Math.random()* 2).toFixed(0)
+
+        if(Sorteio == 0){
+            div1.innerHTML = `<img src = "https://play-lh.googleusercontent.com/ScnYXCQGDAORi_0NXPSyr_kNJYVXk05mhK5dg1_n3HPUh1j2S5QbvvQjevug1vujNFp-=w526-h296-rw" style = "width: 150px;">`
+        
+        }else if(Sorteio <= 1){
+            div1.innerHTML = `<img src = "https://play-lh.googleusercontent.com/wedoRxfBvOscXhvtlnIRnTXwrKqNT2pSBxCe9uIxS4C3CSB2h_hafVj551n0FBTj_GE=w526-h296-rw" style = "width: 150px;">`
+        
+        }else if(Sorteio <= 2){
+            div1.innerHTML = `<img src = "https://img2.gratispng.com/20180705/sfh/kisspng-rockpaperscissors-computer-icons-clip-art-paper-scissors-5b3e1287be5a43.5750598415307946317797.jpg" style = "width: 150px;">`
+        }
+    }
+</script>

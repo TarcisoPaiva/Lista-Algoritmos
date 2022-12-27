@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19</title>
+    
+</head>
+<body>
+    <h2>Trajeto até a SPTECH</h2>
+    Quantos Ônibus: <input id="Onibus1"><br>
+    Quantos Trens: <input id="Trens1"><br>
+    Quantos Metrôs: <input id="Metros1"><br>
+    <button onclick="Partiu()">#Partiu Trajeto...</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>
+<script>
+    function Partiu(){
+        div1.innerHTML = ""
+        div2.innerHTML = ""
+        div3.innerHTML = ""
+       
+        
+        var Contador = 0
+
+        var Onibus = Number(Onibus1.value)
+        var Trens = Number(Trens1.value)
+        var Metros = Number(Metros1.value)
+        var Soma = Onibus + Trens + Metros
+
+        while(Contador < Soma){
+        Contador++  
+        
+        if(Contador <= Onibus && Contador < 2){
+        div1.innerHTML += `<font color = "red"> Pegando o ${Contador}º Buzão </font> <br>`
+        
+        }else if(Contador <= Onibus && Contador == 2){
+        div1.innerHTML += `<font color = "red"> Pegando o ${Contador}º Buzão, Está começando a cansar </font> <br>`
+   
+        }else if(Contador <= Onibus && Contador >= 3)
+        div1.innerHTML += `<font color = "red"> Pegando o ${Contador}º Buzão, Já cansado </font> <br>`
+
+
+        if(Contador <= Trens && Contador <2){
+        div2.innerHTML += `<font color = "green"> Pegando o ${Contador}º Trem </font> <br>`
+        
+        }else if(Contador <= Trens && Contador == 2){
+        div2.innerHTML += `<font color = "green"> Pegando o ${Contador}º Trem, Está começando a cansar </font> <br>`
+        
+        }else if(Contador <= Trens && Contador >= 3){
+        div2.innerHTML += `<font color = "green"> Pegando o ${Contador}º Trem, Já cansado </font> <br>`
+        }
+
+
+        if(Contador <= Metros && Contador < 2){
+        div3.innerHTML += `<font color = "blue"> Pegando o ${Contador}º Metrô </font> <br>`
+        
+        }else if(Contador <= Metros && Contador == 2){
+        div3.innerHTML += `<font color = "blue"> Pegando o ${Contador}º Metrô, Está começando a cansar </font> <br>`
+        
+        }else if(Contador <= Metros && Contador >= 3){
+        div3.innerHTML += `<font color = "blue"> Pegando o ${Contador}º Metrô, Já cansado </font> <br>`
+        }
+        }
+    }
+</script>

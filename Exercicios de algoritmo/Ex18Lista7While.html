@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18</title>
+    
+</head>
+<body>
+    <h2>Trajeto até a SPTECH</h2>
+    Quantos Ônibus: <input id="Onibus1"><br>
+    Quantos Trens: <input id="Trens1"><br>
+    Quantos Metrôs: <input id="Metros1"><br>
+    <button onclick="Partiu()">#Partiu Trajeto...</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    function Partiu(){
+        div1.innerHTML = ""
+        div2.innerHTML = ""
+       
+        
+        var Contador = 0
+
+        var Onibus = Number(Onibus1.value)
+        var Trens = Number(Trens1.value)
+        var Metros = Number(Metros1.value)
+        var Soma = Onibus + Trens + Metros
+
+        while(Contador < Soma){
+        Contador++
+
+        if(Contador <= Onibus){
+        div1.innerHTML += `<font color = "red"> Pegando o ${Contador}º Buzão </font> <br>`
+        }
+
+        if(Contador <= Trens){
+        div2.innerHTML += `<font color = "green"> Pegando o ${Contador}º Trem </font> <br>`
+        }
+
+        if(Contador <= Metros){
+        div3.innerHTML += `<font color = "blue"> Pegando o ${Contador}º Metrô </font> <br>`
+        }
+        }
+
+        
+    }
+</script>

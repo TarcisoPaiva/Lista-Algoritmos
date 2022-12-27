@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco 12h</title>
+</head>
+<body>
+    <h1>Notas Disponiveis 10R$ 50R$ 100R$</h1>
+    Valor do Saque: <input id="Valor1"><br>
+    <button onclick="Saque()">Solicitar Saque</button>
+</body>
+</html>
+<script>
+    var SaldoDoBanco = 1000
+
+    function Saque(){
+        var ValorSaque = Number(Valor1.value)
+        
+
+        if(ValorSaque <= 0){
+            alert('Impossivel sacar menos de 0')
+        }
+
+        if(ValorSaque > 0 && (ValorSaque % 10 == 0 || ValorSaque % 50 == 0 || ValorSaque % 100 == 0)){
+            
+        if(ValorSaque < SaldoDoBanco){
+            SaldoDoBanco -= ValorSaque
+            alert('Retire o dinheiro no lugar indicado')
+        
+        }else{
+            alert('Valor Solicitado maior que o saldo do banco')
+        }
+
+        }else{
+            alert('Valor não possivel devido as notas')
+        
+        }
+    }
+</script>

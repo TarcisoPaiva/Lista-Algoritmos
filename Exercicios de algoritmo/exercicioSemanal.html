@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Informe o Limite Inferior</p>
+    <input type="text" id="input_inferior" />
+
+    <p>Informe o Limite Superior</p>
+    <input type="text" id="input_superior" />
+
+    <p>Informe o primeiro número</p>
+    <input type="text" id="input_primeiro" />
+
+    <p>Informe o segundo número</p>
+    <input type="text" id="input_segundo" />
+    <br />
+    <button onclick="validar()">Mostrar</button>
+    <br />
+    <div id="idDiv"></div>
+  </body>
+</html>
+<script>
+  var inferior = 0;
+  var superior = 0;
+  var primeiroNum = 0;
+  var segundoNum = 0;
+
+  function validar(params) {
+    inferior = Number(input_inferior.value);
+    superior = Number(input_superior.value);
+    primeiroNum = Number(input_primeiro.value);
+    segundoNum = Number(input_segundo.value);
+    var validador = "false";
+
+    idDiv.innerHTML = "";
+
+    if (Number.isNaN(inferior) || Number.isNaN(superior) || Number.isNaN(primeiroNum) || Number.isNaN(segundoNum)) {
+      alert("Deve ser inserido apenas número");
+      validador = "true";
+    }
+    if (inferior <= 20) {
+      alert("Limite inferior tem que ser maior que 20");
+      validador = "true";
+    }
+    if (superior <= inferior || superior >= 1000) {
+      alert("Limite superior invalido, verifique o conteúdo");
+      validador = "true";
+    }
+    if (primeiroNum < 3 || primeiroNum > 20) {
+      alert("“Primeiro número de divisibilidade tem que estar entre 3 e 20”.");
+      validador = "true";
+    }
+    if (segundoNum < 3 || segundoNum > 20 || segundoNum == primeiroNum) {
+      alert(
+        "“Segundo número de divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro”."
+      );
+      validador = "true";
+    }
+    if (validador == "false") {
+      emitir();
+    }
+  }
+  function emitir(params) {
+    var validar = "false";
+    var qtdExibir = 0;
+    var soma = 0;
+    var somador = 0;
+    var maior = 0;
+    var menor = 0;
+    for (let index = inferior; index <= superior; index++) {
+      if (index % primeiroNum == 0 && index % segundoNum == 0) {
+        idDiv.innerHTML += `<br>O número ${index} é divisível de pelo primeiro e pelo segundo número<br>`;
+
+        validar = "true";
+        qtdExibir++;
+
+        if (qtdExibir == 1) {
+          soma = soma + index;
+          somador = soma;
+          menor = index;
+        } else {
+          soma = somador + index;
+          somador = soma;
+          maior = index;
+        }
+      } else if (index % primeiroNum == 0) {
+        idDiv.innerHTML += `<br>O número ${index} é divisível pelo primeiro número<br>`;
+
+        validar = "true";
+        qtdExibir++;
+
+        if (qtdExibir == 1) {
+          soma = soma + index;
+          somador = soma;
+          menor = index;
+        } else {
+          soma = somador + index;
+          somador = soma;
+          maior = index;
+        }
+      } else if (index % segundoNum == 0) {
+        idDiv.innerHTML += `<br>O número ${index} é divisível pelo segundo número<br>`;
+
+        validar = "true";
+        qtdExibir++;
+
+        if (qtdExibir == 1) {
+          soma = soma + index;
+          somador = soma;
+          menor = index;
+        } else {
+          soma = somador + index;
+          somador = soma;
+          maior = index;
+        }
+      }
+    }
+
+    if (validar == "false") {
+      idDiv.innerHTML += `<br>***Não foram encontrados números divisíveis***<br>`;
+    }
+
+    if (validar == "true") {
+      idDiv.innerHTML += `<br>Quantidade de números exibidos:${qtdExibir}<br>`;
+      idDiv.innerHTML += `<br>Média de números exibidos:${
+        soma / qtdExibir
+      }<br>`;
+      idDiv.innerHTML += `<br>Maior número exibidos:${maior}<br>`;
+      idDiv.innerHTML += `<br>Menor número exibido:${menor}<br>`;
+    }
+  }
+</script>

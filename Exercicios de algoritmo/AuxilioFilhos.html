@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUX Filhos</title>
+</head>
+<body>
+    Quantidade de filhos Menor 10 Anos <input id="Menor10">
+    Quantidade de filhos Maior 10 Anos <input id="Maior10">
+    <button onclick="CalcularAUX()">CalcularAUX</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function CalcularAUX(){
+        var Menor10Anos = 30 * Number(Menor10.value)
+        var Maior10Anos = 20 * Number(Maior10.value)
+        var Soma = Menor10Anos + Maior10Anos
+        div1.innerHTML = `Voçê tem ${Menor10.value} filhos menores de 10 anos, e ${Maior10.value} a partir de 10 anos, logo seu Auxilio Filhos será de ${Soma}`
+    }
+</script>

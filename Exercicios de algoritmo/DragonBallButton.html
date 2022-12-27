@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z</title>
+</head>
+<body>
+    KI base do Guerreiro Sayadin: <input id="KIbase">
+    <div>Transformar em....</div>
+    <button onclick="Sayadin()">SSJ</button>
+    <button onclick="Sayadin2()">SSJ2</button>
+    <button onclick="Sayadin3()">SSJ3</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Sayadin(){
+        var SSJ = Number(KIbase.value) * 50
+        div1.innerHTML = `Após se transformar em SSJ o KI desse Sayadin é ${SSJ}`
+    }
+    function Sayadin2(){
+        var SSJ2 = Number(KIbase.value) * 100
+        div1.innerHTML = `Após se transformar em SSJ2 o KI desse Sayadin é ${SSJ2}`
+    }
+    function Sayadin3(){
+        var SSJ3 = Number(KIbase.value) * 200
+        div1.innerHTML = `Após se transformar em SSJ3 o KI desse Sayadin é ${SSJ3}`
+    }
+</script>

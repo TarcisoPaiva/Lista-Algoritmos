@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AminTiroso</title>
+</head>
+<body>
+    Quantas Latinhas de refrigerante toma por dia?<input id="QtdLatinhas">
+    <button onclick="Refris()">Quantos Refris?</button>
+    <div id="div1"></div>
+   
+    
+</body>
+</html>
+<script>
+    function Refris(){
+        var Ano = Number(QtdLatinhas.value) * 365
+
+        if (Ano >= 500){
+        div1.innerHTML = ` Você tomou ${Ano} Latinhas de refrigerantes Cuidado com a diabetes`
+        } else{
+            div1.innerHTML = `Você tomou ${Ano} Latinhas de refrigerantes`
+        }
+    }
+</script>

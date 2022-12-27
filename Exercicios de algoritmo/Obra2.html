@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obra 2</title>
+</head>
+<body>
+
+    Gasto Diário: <input id="GastoDiario">
+    Meses de Reforma: <input id="TempoDeReforma">
+    <button onclick="ProjecaoSemanal()">Ver Projeção Semanal</button>
+    <button onclick="ProjecaoMensal()">Ver Projeção Mensal</button>
+    <button onclick="ProjecaoTotal()">Ver Projeção Total</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    function ProjecaoSemanal(){
+        var Semanal = GastoDiario.value * 7
+        div1.innerHTML = `A Projeção semanal será de ${Semanal}`
+    }
+    function ProjecaoMensal(){
+        var Mensal = Number(GastoDiario.value * 30) + 1200
+        div2.innerHTML = `A Projeção mensal será de ${Mensal}`
+    }
+    function ProjecaoTotal(){
+        var Total = Number(GastoDiario.value * 30 + 1200) * Number(TempoDeReforma.value)
+        div3.innerHTML = `A Projeção total será de ${Total}`
+        
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metrô</title>
+</head>
+<body>
+    <button onclick="oito()">8 Passagens</button>
+    <button onclick="vinte()">20 Passagens</button>
+    <button onclick="cinquenta()">50 Passagens</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    function oito(){
+        var QtdDePassagens = 8
+        var EconomiaDeRecarga = ((35.20 / 32.45) - 1) * 100
+        var Bonus = EconomiaDeRecarga / 4.40
+
+        div1.innerHTML = `Ao Comprar ${QtdDePassagens} Passagens, Você pagou a menos ${EconomiaDeRecarga.toFixed(2)}, é como se tivesse ganhando ${Bonus.toFixed(0)} passagens "bônus"`
+    }
+    function vinte(){
+        var QtdDePassagens = 20
+        var EconomiaDeRecarga = ((88.00 / 78.65) - 1) * 100
+        var Bonus = EconomiaDeRecarga / 4.40
+
+        div2.innerHTML = `Ao Comprar ${QtdDePassagens} Passagens, Você pagou a menos ${EconomiaDeRecarga.toFixed(2)}, é como se tivesse ganhando ${Bonus.toFixed(0)} passagens "bônus"`
+    }
+    function cinquenta(){
+        var QtdDePassagens = 50
+        var EconomiaDeRecarga = ((220.00 / 191.41) - 1) * 100
+        var Bonus = EconomiaDeRecarga / 4.40
+
+        div3.innerHTML = `Ao Comprar ${QtdDePassagens} Passagens, Você pagou a menos ${EconomiaDeRecarga.toFixed(2)}, é como se tivesse ganhando ${Bonus.toFixed(0)} passagens "bônus"`
+    }
+</script>

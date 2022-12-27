@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR11</title>
+</head>
+<body>
+    Preço do Produto: <input id="Preco1">
+    <button onclick="Cadastrar()">Cadastrar</button>
+    <button onclick="Atualizar()">Atualizar Estoque</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VtEstoque = []
+    
+
+    function Cadastrar(){
+        var Preco = Number(Preco1.value)
+
+        if(Number.isNaN(Preco)){
+            alert('Informe um Preço, letras são Inválidas!!')
+        
+        }else if(Preco == ""){
+            alert('Campo de Preço Vazio!!')
+       
+        }else{
+            VtEstoque.push(Preco)
+            div1.innerHTML = ""
+            Preco1.value = ""
+        }
+    }
+
+    function Atualizar(){
+
+        if(VtEstoque == ""){
+            alert('Nenhum Valor Informado ainda!')
+        
+        }else{  
+        var Soma = 0
+
+        for(var Contador = 0; Contador < VtEstoque.length; Contador++){
+            Soma += VtEstoque[Contador]
+        }
+
+        div1.innerHTML = `<br>Você tem <b>${VtEstoque.length}</b> Produtos cadastrados em estoque<br><br> Seu estoque vale R$${Soma.toFixed(2)}`
+        }
+        
+    }
+</script>

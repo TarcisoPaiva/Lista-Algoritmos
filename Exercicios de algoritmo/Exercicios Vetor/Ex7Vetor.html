@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR7</title>
+</head>
+<body>
+    Digite seus Filmes: <input id="Filmes">
+    <button onclick="Cadastrar()">Cadastrar</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VtFilmes = []
+    
+    function Cadastrar(){
+        var Filme = Filmes.value
+
+        if(Filme == ""){
+            alert("Campo Filme Vazio")
+        
+        }else{
+        VtFilmes.push(Filme)
+        Filmes.value = ""
+        div1.innerHTML = ""
+
+        for(var Contador = 0; Contador < VtFilmes.length; Contador++){
+            
+            if(Contador % 2 == 0){
+                div1.innerHTML += `<font color = "blue">${Contador+1}° Filme é ${VtFilmes[Contador]}</font><br>`
+            
+            }else{
+                div1.innerHTML += `<font color = "red">${Contador+1}° Filme é ${VtFilmes[Contador]}</font><br>`
+            }
+        }
+        }
+        
+    }
+</script>

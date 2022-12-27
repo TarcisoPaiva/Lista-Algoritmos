@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belo Dia</title>
+</head>
+<body>
+    <h2>Frases</h2>
+    <select id="Sel1">
+    <option value="">Selecione as Opções</option>
+    <option value=" Uma Vez">Uma Vez...</option>
+    <option value=" Num Belo Dia">Num Belo Dia...</option>
+    <option value=" Numa Noite Chuvosa">Numa Noite Chuvosa...</option>
+    </select>
+    <br>
+    <select id="Sel2">
+    <option value="">Selecione as Opções</option>
+    <option value=" Um Peixe Morreu Afogado">Um Peixe Morreu Afogado</option>
+    <option value=" Um Gato tomou banho">Um Gato tomou banho</option>
+    <option value=" Um Corvo se curvou">Um Corvo se curvou</option>
+    </select>
+    <br>
+    <button onclick="Juntar()">Juntar</button>
+</body>
+</html>
+<script>
+    function Juntar(){
+        var Selecao1 = Sel1.value
+        var Selecao2 = Sel2.value
+        var Soma = Selecao1 + Selecao2
+
+        if(Soma != ''){
+        alert(Soma)
+        }
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <h1>JoKenPo</h1>
+    <select id="Sel1">
+        <option value="Pedra">Pedra</option>
+        <option value="Papel">Papel</option>
+        <option value="Tesoura">Tesoura</option>
+    </select>
+
+    <select id="Sel2">
+        <option value="Pedra">Pedra</option>
+        <option value="Papel">Papel</option>
+        <option value="Tesoura">Tesoura</option>
+    </select>
+    <button onclick="Jogar()">Jogar</button>
+</body>
+</html>
+<script>
+    function Jogar(){
+        var Jogador1 = Sel1.value
+        var Jogador2 = Sel2.value
+        
+        if(Jogador1 == 'Pedra' && Jogador2 == 'Tesoura' || Jogador1 == 'Papel' && Jogador2 == 'Pedra' || Jogador1 == 'Tesoura' && Jogador2 == 'Papel'){
+        alert('Jogador 1 Venceu')
+        
+        }else{
+            alert('Jogador 2 Venceu')
+        }
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequência do aluno</title>
+</head>
+<body>
+    Frequência do aluno <input id="FreAluno">
+    <button onclick="Analisar()">Analisar Frequência</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var Aluno = Number(FreAluno.value)
+
+        if(Aluno < 50){
+        div1.innerHTML = `ALUNO Turista <br> <img src = "https://cdn-icons-png.flaticon.com/128/4540/4540213.png">`
+        }else{
+        div1.innerHTML = `ALUNO Estudioso <br> <img src = "https://cdn-icons-png.flaticon.com/128/3611/3611535.png">`
+        }
+    }
+</script>

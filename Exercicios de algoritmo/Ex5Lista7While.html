@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    <h2>1 a 15 Menos Números Cabalisticos</h2>
+    <button onclick="Ver()">Ver</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    Contador = 0
+
+    function Ver(){
+
+        while(Contador < 15){
+        Contador ++
+
+        if(Contador != 3 && Contador != 4 && Contador != 7 && Contador != 10 && Contador != 12){
+        div1.innerHTML += `${Contador}<br>`
+
+        }
+        }
+    }
+</script>

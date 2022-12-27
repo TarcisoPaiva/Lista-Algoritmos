@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR8</title>
+</head>
+<body>
+    Digite o Nome dos Alunos: <input id="Nome1">
+    <button onclick="Cadastrar()">Cadastrar Alunos</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VtAlunos = []
+    function Cadastrar(){
+        var Nome = Nome1.value
+        if(Nome == ""){
+            alert('Campo Vazio, Digite um Nome')
+        }else if(Number(Nome)){
+            alert('Número é Inválido')
+        
+        }else{
+        VtAlunos.push(Nome)
+        Nome1.value = ""
+        div1.innerHTML = ""
+
+        for(var Contador = VtAlunos.length-1; Contador >= 0; Contador--){
+
+            div1.innerHTML += `${Contador+1}º Aluno Cadastrado é ${VtAlunos[Contador]}<br>`
+        }
+        }
+      
+    }
+</script>

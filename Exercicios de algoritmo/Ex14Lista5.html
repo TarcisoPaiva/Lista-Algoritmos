@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor da Pizza</title>
+</head>
+<body>
+    <div id="div2"><img src = "https://cdn-icons-png.flaticon.com/512/706/706918.png" style = "width: 250px;"></div>
+    Sabor da Pizza: <input id="SaborPizza">
+    <button onclick="Ver()">Calcular Preço da Pizza</button><br>
+
+    <select id="Sel1">
+        <option value="">-Selecione o Ingrediente</option>
+        <option value="8.00">Queijo</option>
+        <option value="10.00">Palmito</option>
+        <option value="7.00">Frango</option>
+        <option value="5.00">Presunto</option>
+        <option value="1.00">Ovo</option>
+        <option value="6.00">Catupiry</option>
+    </select>
+<br>
+    <select id="Sel2">
+        <option value="">-Selecione o Ingrediente</option>
+        <option value="8.00">Queijo</option>
+        <option value="10.00">Palmito</option>
+        <option value="7.00">Frango</option>
+        <option value="5.00">Presunto</option>
+        <option value="1.00">Ovo</option>
+        <option value="6.00">Catupiry</option>
+        </select>
+<br>
+    <select id="Sel3">
+        <option value="">-Selecione o Ingrediente</option>
+        <option value="8.00">Queijo</option>
+        <option value="10.00">Palmito</option>
+        <option value="7.00">Frango</option>
+        <option value="5.00">Presunto</option>
+        <option value="1.00">Ovo</option>
+        <option value="6.00">Catupiry</option>
+    </select>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Ver(){
+        var Sabor = SaborPizza.value
+        var Tabela = Number(Sel1.value)
+        var Tabela2 = Number(Sel2.value)
+        var Tabela3 = Number(Sel3.value)
+        var Soma = Tabela + Tabela2 + Tabela3
+        
+        div1.innerHTML = `A Pizza do Sabor <u>${Sabor}</u> vai custar um total de <b>${Soma}R$</b>`
+    }
+</script>

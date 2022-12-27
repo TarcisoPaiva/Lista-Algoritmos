@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost</title>
+</head>
+<body>
+    Quantidade de elefantes: <input id="QtdElefantes"><br>
+    <button onclick="Atazanar()">Atazanar Médium</button>
+    <div id="div1"></div>
+    
+</body>
+</html>
+<script>
+    function Atazanar(){
+        var Contador = 0
+        var Elefantes = Number(QtdElefantes.value)
+        var Repetir = "Incomodam"
+        
+
+        while(Contador <= Elefantes){
+        ++Contador
+
+        if(Contador != 1){
+        div1.innerHTML += `1 Elefante incomodam muita gente<br>`
+        div1.innerHTML += `${Contador} Elefantes ${Repetir += ' Incomodam, '} muito mais<br>`
+        }
+        }
+        
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obra</title>
+</head>
+<body>
+    Quantos meses a reforma levará?: <input id="TempoDaReforma">
+    <button onclick="ProjecaoSemanal()">Ver Projeção Semanal</button>
+    <button onclick="ProjecaoMensal()">Ver Projeção Mensal</button>
+    <button onclick="ProjecaoTotal()">Ver Projeção Total</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    function ProjecaoSemanal(){
+        var Semanal = 380 * 7
+        div1.innerHTML = `A Projeção semanal será de ${Semanal}`
+    }
+    function ProjecaoMensal(){
+        var Mensal = 380 * 30
+        div2.innerHTML = `A Projeção mensal será de ${Mensal}`
+    }
+    function ProjecaoTotal(){
+        var Total = 11400 * TempoDaReforma.value
+        div3.innerHTML = `A Projeção total será de ${Total}`
+    }
+</script>

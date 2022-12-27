@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 8 OU</title>
+</head>
+<body>
+    <h2>Calculadora de cansaço Aprimorada do aluno SPTech.</h2>
+    <h3>Meio de Transporte</h3>
+
+    <select id="Sel1">
+        <option value="Onibus">Ônibus</option>
+        <option value="Metro">Metrô</option>
+        <option value="Carro">Carro</option>
+        <option value="Bicicleta">Bicicleta</option>
+        <option value="Lotacao">Lotação</option>
+    </select>
+  
+    Distância da faculdade :<input id="Distancia1" placeholder="KM">
+    <button onclick="Calcular()">Calcular cansaço</button>
+</body>
+</html>
+<script>
+    function Calcular(){
+        Tabela = Sel1.value
+        Distancia = Distancia1.value
+
+        if(Distancia <= 10 && (Tabela == 'Carro' || Tabela == 'Metro' || Tabela == 'Onibus')){
+        alert('Tá tranks')
+            
+        }else{
+        alert('É um pouco cansado')
+        }
+
+        if(Distancia > 10 && (Tabela == 'Carro')){
+        alert('É um pouco cansado')
+        
+        }else if(Distancia > 10 && (Tabela == 'Metro' || Tabela == 'Onibus')){
+        alert('Bem Cansado')
+        
+        }else if(Distancia > 10 && (Tabela == 'Bicicleta')){
+        alert('Vish só o pó')
+        }
+        
+    }
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+   
+</head>
+<body>
+    Valor da Caixa: <input id="ValorCaixa"><br>
+    Quantidades de Comprimidos: <input id="QuantidadesComprimidos"><br>
+    Tipo do Comprimido: <input id="TipoComprimidos" type="text">Oxicodona,Hidromorfona,Metadona<br>
+   <button onclick="Calcular()">Calcular Ganhos com nossa Solução</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var Custo = 0
+        var Faturamento = 0
+        var Lucro = 0
+        var LucroFleming = 0
+
+        if(TipoComprimidos.value == 'Oxicodona'){
+        Custo = 0.38 * QuantidadesComprimidos.value
+        Faturamento = (QuantidadesComprimidos.value / 30) * ValorCaixa.value
+        Lucro = Faturamento - Custo
+        LucroFleming = Lucro * 1.15
+        div1.innerHTML = `O Lucro é de ${Lucro.toFixed(2)} R$, com a nossa solução sua empresa Ganharia ${LucroFleming.toFixed(2)} R$, <br> <b>15% a mais de lucro! </b>`
+
+        }else if(TipoComprimidos.value == 'Hidromorfona'){
+        Custo = 0.46 * QuantidadesComprimidos.value
+        Faturamento = (QuantidadesComprimidos.value / 30) * ValorCaixa.value
+        Lucro = Faturamento - Custo
+        LucroFleming = Lucro * 1.15
+        div1.innerHTML = `O Lucro é de ${Lucro.toFixed(2)} R$, com a nossa solução sua empresa Ganharia ${LucroFleming.toFixed(2)} R$,  <br> <b>15% a mais de lucro! </b>`
+
+        }else if(TipoComprimidos.value == 'Metadona'){
+        Custo = 0.67 * QuantidadesComprimidos.value
+        Faturamento = (QuantidadesComprimidos.value / 30) * ValorCaixa.value
+        Lucro = Faturamento - Custo
+        LucroFleming = Lucro * 1.15
+        div1.innerHTML = `O Lucro é de ${Lucro.toFixed(2)} R$, com a nossa solução sua empresa ganharia ${LucroFleming.toFixed(2)} R$, <br> <b>15% a mais de lucro!`
+        
+        }else{
+        div1.innerHTML = `Não Trabalhamos com esse tipo de Medicamento`
+        }
+    }
+</script>

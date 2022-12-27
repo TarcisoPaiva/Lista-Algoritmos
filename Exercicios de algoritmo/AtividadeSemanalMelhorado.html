@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Semanal</title>
+   
+</head>
+<body>
+    Limite Inferior: <input id="Inferior1"><br>
+    Limite Superior: <input id="Superior1"><br>
+    Primeiro Número Divisivel: <input id="Divisivel1"><br>
+    Segundo Número Divisivel: <input id="Divisivel2"><br>
+    <button onclick="Mostrar()">Mostrar</button> 
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Mostrar(){
+
+        var Inferior = Number(Inferior1.value)
+        var Superior = Number(Superior1.value)
+        var PrimeiroDivisivel = Number(Divisivel1.value)
+        var SegundoDivisivel = Number(Divisivel2.value)
+        var Validador = "false"
+
+        if(Number.isNaN(Inferior) || Number.isNaN(Superior) || Number.isNaN(PrimeiroDivisivel) || Number.isNaN(SegundoDivisivel)){
+            alert('Deve ser inserido somente números')
+            Validador = "true"       
+        }
+        if(Inferior == "" && Superior == "" && PrimeiroDivisivel == "" && SegundoDivisivel == ""){
+            alert('Campos de entrada vazio')
+            Validador = "true"
+        }
+        if(Inferior < 20){
+            alert('O Número inferior tem que ser maior que 20')
+            Validador = "true"
+        }
+        if(Superior < Inferior || Superior > 1000 || Superior == Inferior){
+            alert('Limite superior invalido, verifique o conteúdo.')
+            Validador = "true"
+        }
+        if(PrimeiroDivisivel < 3 || PrimeiroDivisivel > 20){
+            alert('Primeiro número de divisibilidade tem que estar entre 3 e 20')
+            Validador = "true"
+        }
+        if(SegundoDivisivel < 3 || SegundoDivisivel > 20 || SegundoDivisivel == PrimeiroDivisivel){
+            alert('Segundo número de divisibilidade tem que estar entre 3 e 20 e ser diferente do primeiro')
+            Validador = "true"
+        }
+        if(Validador == 'false'){
+           alert('Passou por todas as verificações')
+        }
+
+        
+    }
+</script>
+   

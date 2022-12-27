@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR9</title>
+</head>
+<body>
+    Nome dos Projetos: <input id="Projetos1">
+    <button onclick="Registrar()">Registrar Projeto</button>
+    <button onclick="Mostrar()">Mostrar Projeto</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VtProjetos = []
+    
+    function Registrar(){
+        var Projetos = Projetos1.value
+
+        if(Projetos == ""){
+            alert('Campo de Projeto Vazio!!')
+        }else{
+            Projetos1.value = ""
+            VtProjetos.push(Projetos)
+        }
+    }
+    function Mostrar(){
+
+            if(VtProjetos == ""){
+                alert('Nenhum Projeto Para Mostrar')
+            }else{
+                for(Contador = VtProjetos.length-1; Contador >= 0; Contador--){
+
+                if(VtProjetos.length >= 0 && VtProjetos.length <= 4){
+                div1.innerHTML = `Você já fez ${VtProjetos.length} projetos, por isso você é um profissional <b>Júnior</b> `
+                }
+                else if(VtProjetos.length >= 5 && VtProjetos.length <= 12){
+                div1.innerHTML = `Você já fez ${VtProjetos.length} projetos, por isso você é um profissional <b>Pleno</b><br> Você é <b>Pleno</b> desde o projeto: ${VtProjetos[4]}`
+                }else{
+                div1.innerHTML = `Você já fez ${VtProjetos.length} projetos, por isso você é um profissional <b>Sênior</b><br> Você é <b>Sênior</b> desde o projeto: ${VtProjetos[12]}`
+                }    
+                }
+                }   
+    }
+</script>

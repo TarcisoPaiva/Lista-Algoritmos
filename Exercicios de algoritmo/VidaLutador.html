@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida</title>
+</head>
+<body>
+    <h2>VIDA DO LUTADOR: <b id="b">1000</b></h3><br>
+    <button onclick="Apanhar()">Apanhar</button>
+    <button onclick="Concentrar()">Concentrar</button>
+    <div id="div1">LUTADOR AINDA VIVO</div>
+    
+</body>
+</html>
+<script>
+    var VidaLutador = 1000
+    
+    function Apanhar(){
+    VidaLutador -= 100
+
+    if(VidaLutador > 0){
+    b.innerHTML = `${VidaLutador}`
+    
+    }else{
+    div1.innerHTML = `LUTADOR JÁ ERA`
+    }
+    
+    }
+    function Concentrar(){
+    VidaConcentrar = VidaLutador += 50
+    
+    if(VidaLutador > 0){
+    b.innerHTML = `${VidaConcentrar}`
+    }
+    }
+</script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR17</title>
+   
+</head>
+<body>
+   <div id="Menu" style="display: block;">
+   <h2>Análise de Performace de Alunos - Registro</h2> 
+
+    Nome do Aluno: <input id="Nome1"><br>
+    Nota do Aluno: <input id="Nota1"><br>
+    <button onclick="Registrar()">Registrar</button>
+    <button onclick="Analisar()">Analisar</button>
+    <div id="div1"></div>
+    </div>
+    </div>
+
+    <div id="Menu2" style="display: none;">
+    <h2>Análise de Performace de Alunos - Pesquisa</h2>
+
+    Entre com o Intervalo da Notas: <input id="De1" placeholder="De"> <input id="Ate1" placeholder="Até"><br>
+    <button onclick="Pesquisar()">Pesquisar</button>
+    <div id="div2"></div>
+    </div>
+</body>
+</html>
+<script>
+    VtNota = []
+    VtAluno = []
+
+    function Analisar(){
+
+        if(VtAluno == ""){
+            alert('Ninguém Cadastrado ainda!')
+        }else{
+            Menu.style.display = "none"
+            Menu2.style.display = "block"
+        }
+        
+    }
+   function Registrar(){
+        var Validar = 0
+        var Nome = Nome1.value
+        var Nota = Number(Nota1.value)
+
+        if(Nome == ""){
+            alert('Campo Nome Vazio')
+            Validar++
+        }
+        if(Nota < 0 || Nota > 10){
+            alert('Nota tem que ficar entre 0 e 10')
+            Validar++
+        }
+        if(Number.isNaN(Nota)){
+            alert('Letras é inválidas no campo Nota!')
+            Validar++
+        }
+        if(Number(Nome)){
+            alert('Números é inválido no campo Nome!')
+            Validar++
+        }
+        if(Validar == 0){
+            VtAluno.push(Nome)
+            VtNota.push(Nota)
+            Nome1.value = ""
+            Nota1.value = ""
+            div1.innerHTML = ""
+
+            for(var Contador = VtAluno.length-1; Contador >= 0; Contador--){
+                div1.innerHTML += `Nome: ${VtAluno[Contador]} -- Nota: ${VtNota[Contador]}<br>`
+            }
+        }
+    }
+   
+   function Pesquisar(){
+         
+            var De = Number(De1.value)
+            var Ate = Number(Ate1.value)
+            var QtdAlunos = 0
+            var MaiorNota = 0
+            var MenorNota = 10
+            var Soma = 0
+            var Media = 0
+
+            if(VtAluno == "" || VtNota == ""){
+                alert('Nenhum Aluno Cadastrado')
+            }else{
+                div2.innerHTML = ""
+
+                if(De < 0){
+
+                }
+                for(var index = 0; index < VtNota.length; index++){
+                
+
+                if(VtNota[index] >= De && VtNota[index] <= Ate ){
+                    QtdAlunos++
+                    div2.innerHTML += ` O Aluno ${VtAluno[index]} Ficou com a Nota: ${VtNota[index]}<br>` 
+                    Soma += VtNota[index]
+
+                    if(VtNota[index] > MaiorNota){
+                    MaiorNota = VtNota[index]
+                    }
+                    if(VtNota[index] < MenorNota){
+                    MenorNota = VtNota[index]
+                    }
+                }   
+                }
+                
+                }
+                if(QtdAlunos > 0){
+                    div2.innerHTML += `<br>Total de Alunos Registrados: ${VtAluno.length}<br><br>Total de Alunos Listados(Dentro do Intervalo): ${QtdAlunos}<br><br> Maior Nota: ${MaiorNota}<br><br> Menor Nota: ${MenorNota}<br><br> Soma das Notas: ${Soma}<br><br> Média das Notas: ${Soma / QtdAlunos}`
+                }else{
+                    div2.innerHTML += `Não Existe Nenhum Aluno cadastrado dentro desse intervalo`
+                }
+                }
+</script>

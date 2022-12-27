@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento</title>
+</head>
+<body>
+    <h1>Como está meu atendimento?</h1>
+    <select id="Sel1">
+        <option value="1">1 Estrela</option>
+        <option value="2">2 Estrelas</option>
+        <option value="3">3 Estrelas</option>
+        <option value="4">4 Estrelas</option>
+        <option value="5">5 Estrelas</option>
+    </select>
+
+        <li>Média Atual <b id="b1">0</b> Estrelas</li>
+        <li>Número de Avaliações <b id="b2">0</b></li>
+        <button onclick="Confirmar()">Confirmar Avaliação</button>
+</body>
+</html>
+<script>
+    var Avaliacao = 0
+    function Confirmar(){
+        
+        var Tabela = Number(Sel1.value)
+        var Media = (Tabela += Avaliacao) / 5
+
+        b1.innerHTML = `${Media.toFixed(1)}`
+        b2.innerHTML = `${Avaliacao += 1}`
+        
+    }
+</script>

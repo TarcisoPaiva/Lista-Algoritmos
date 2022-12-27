@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR12</title>
+</head>
+<body>
+    Nome do Seu Filho: <input id="NomeFilho1">
+    <button onclick="Cadastrar()">Cadastrar</button>
+    <button onclick="Atualizar()">Atualizar Familia</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    VtFilho = []
+
+    function Cadastrar(){
+        var NomeFilho = NomeFilho1.value
+        NomeFilho1.value = ""
+        var Repetir = 0
+
+        for(var Contador = 0; Contador < VtFilho.length; Contador++){
+
+            if(VtFilho[Contador] == NomeFilho){
+                Repetir++
+            }
+        }
+            if(Repetir > 0){
+                alert('Não Pode ter 2 filhos com o mesmo nome')
+            }else if(NomeFilho == ""){
+                alert('Digite um Nome!')
+            }else if(Number(NomeFilho)){
+                alert('Somente Letras é válidas')
+            }else{
+                VtFilho.push(NomeFilho)
+            }
+    }
+
+    function Atualizar(){
+
+        if(VtFilho == ""){
+            alert('Nenhum Filho Cadastrado no Momento')
+        }else{
+            div1.innerHTML = `Você tem ${VtFilho.length} Filhos <br><br> Seu custo mensal será aproximadamente <b>R$${VtFilho.length * 3000}</b> se colocar eles em escola particular ou <b>R$${VtFilho.length * 1500}</b> se eles estudarem em escola pública`
+        }
+        
+
+    }
+</script>

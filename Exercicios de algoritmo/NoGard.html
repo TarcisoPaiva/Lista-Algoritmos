@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NO Gard</title>
+</head>
+<body>
+    <h2>NoGard</h2>
+    Nome do Atleta: <input id="NomeAtleta"><br>
+    Faixa Conquistada: <input id="CorFaixa"><br>
+    Vitórias: <input id="NumVitorias"><br>
+    Empates: <input id="NumEmpates"><br>
+    Derrotas: <input id="NumDerrotas"><br>
+    <button onclick="Analisar()">Analisar Performace</button>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Analisar(){
+        var Nome = NomeAtleta.value
+        var Faixa = CorFaixa.value
+        var Vitorias = Number(NumVitorias.value)
+        var Empates = Number(NumEmpates.value)
+        var Derrotas = Number(NumDerrotas.value)
+        var DerrotasEmpates = Derrotas + Empates
+        var TotalDeLutas = Vitorias + Empates + Derrotas
+        var SoVitoriasAzul = (TotalDeLutas * 10) + 1000
+        var SoVitoriasAmarela = (TotalDeLutas * 30) + 2000
+        var SoVitoriasLaranja = (TotalDeLutas * 60) + 5000
+        var SoVitoriasVerde = (TotalDeLutas * 100) + 10000
+        var SoVitoriasRoxo = (TotalDeLutas * 150) + 15000
+        var SoVitoriasMarrom = (TotalDeLutas * 300) + 25000
+        var SoVitoriasPreta = (TotalDeLutas * 500) + 50000
+        var SoVitoriasBrancas = (TotalDeLutas * 4)
+
+        if(Faixa == 'Azul'){
+        Vitorias *= 10
+        Empates *= 2
+        Derrotas *= 5
+
+        var PontosIniciais = 1000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+        
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(1)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(0)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(0)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> tivesse Vitórias em todas as lutas ele teria ${SoVitoriasAzul} Pontos, hoje ele tem ${(TotalPontos / SoVitoriasAzul * 100).toFixed(1)}% do Total`
+        
+        }else if(Faixa == 'Amarela'){
+        Vitorias *= 30
+        Empates *= 2
+        Derrotas *= 15
+
+        var PontosIniciais = 2000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(0)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasAmarela} Pontos hoje ele tem ${(TotalPontos / SoVitoriasAmarela * 100).toFixed(1)}% do Total`
+        
+        }else if(Faixa == 'Laranja'){
+        Vitorias *= 60
+        Empates *= 2
+        Derrotas *= 30 
+
+        var PontosIniciais = 5000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(0)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasLaranja} Pontos hoje ele tem ${(TotalPontos / SoVitoriasLaranja * 100).toFixed(1)}% do Total`
+
+        }else if(Faixa == 'Verde'){
+        Vitorias *= 100
+        Empates *= 2
+        Derrotas *= 50
+
+        var PontosIniciais = 10000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(1)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasVerde} Pontos hoje ele tem ${(TotalPontos / SoVitoriasVerde * 100).toFixed(1)}% do Total`
+
+        }else if(Faixa == 'Roxa'){
+        Vitorias *= 150
+        Empates *= 2
+        Derrotas *= 75
+
+        var PontosIniciais = 15000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(1)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasRoxo} Pontos hoje ele tem ${(TotalPontos / SoVitoriasRoxo * 100).toFixed(1)}% do Total`
+
+        }else if(Faixa == 'Marrom'){
+        Vitorias *= 300
+        Empates *= 2
+        Derrotas *= 150
+
+        var PontosIniciais = 25000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(1)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasMarrom} Pontos hoje ele tem ${(TotalPontos / SoVitoriasMarrom * 100).toFixed(1)}% do Total`
+
+        }else if(Faixa == 'Preta'){
+        Vitorias *= 500
+        Empates *= 2
+        Derrotas *= 250
+
+        var PontosIniciais = 50000
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(1)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasPreta} Pontos hoje ele tem ${(TotalPontos / SoVitoriasPreta * 100).toFixed(1)}% do Total`
+        
+
+        }else if(Faixa == 'Branca'){
+        Vitorias *= 4
+        Empates *= 2
+        Derrotas *= 2
+
+        var PontosIniciais = 0
+        var TotalPontos = (Vitorias + Empates - Derrotas) + PontosIniciais
+        var ConquistadoLutas = Vitorias + Empates - Derrotas
+
+        div1.innerHTML += `<br><br><b>${Nome}</b> da Faixa ${Faixa} tem ${TotalPontos} Pontos, Sendo ${(PontosIniciais / TotalPontos * 100).toFixed(0)}% dos pontos iniciais da faixa e ${(ConquistadoLutas / TotalPontos * 100).toFixed(1)}% em pontos conquistados em Lutas. <br> Total de Lutas: ${TotalDeLutas} Lutas, Sendo ${(NumVitorias.value / TotalDeLutas * 100).toFixed(1)}% de Vitórias, e ${(DerrotasEmpates / TotalDeLutas * 100).toFixed(1)}% de Derrotas ou Empates. <br> Se o <b>${Nome}</b> Tivesse Vitórias em todas as lutas ele teria ${SoVitoriasBrancas} Pontos hoje ele tem ${(TotalPontos / SoVitoriasBrancas * 100).toFixed(1)}% do Total`
+        
+        }
+
+        
+    }
+</script>

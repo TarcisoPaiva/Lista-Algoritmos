@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+</head>
+<body>
+    <h2>ELEIÇÕES</h2>
+    Quantidade de votos do Zé Buduia: <input id="QtdZe"><br>
+    Quantidade de votos da Maria Bigodenha: <input id="QtdMaria"><br>
+    Quantidade de votos Brancos: <input id="QtdBrancos"><br>
+    Quantidade de votos Nulos: <input id="QtdNulos"><br>
+    <button onclick="Resultado()">Resultado da Eleição</button>
+    <div id="div1"></div>
+    
+</body>
+</html>
+<script>
+    function Resultado(){
+        var ZeVotos = Number(QtdZe.value) 
+        var MariaVotos = Number(QtdMaria.value)
+        var Brancos = Number(QtdBrancos.value)
+        var Nulos = Number(QtdNulos.value)
+        var TotalVotos = ZeVotos + MariaVotos + Brancos + Nulos
+        var Invalidos = Brancos + Nulos
+
+        div1.innerHTML = `O Total de Votos é: ${TotalVotos} <br> <b>Zé Buduia</b> ${(ZeVotos * 100 / TotalVotos).toFixed(0)} %  (${ZeVotos} Votos) <br>
+        <b>Maria Bigodenha</b>: ${(MariaVotos * 100 / TotalVotos).toFixed(0)} % (${MariaVotos} Votos)<br>
+        <b>Inválidos</b> ${(Invalidos * 100 / TotalVotos).toFixed(0)} % (${Invalidos} Votos) `
+        
+    }
+</script>

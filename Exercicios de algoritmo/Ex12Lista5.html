@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cofrinho</title>
+</head>
+<body>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/1198/1198298.png" style="width: 220px;"></div>
+    <select id="Sel1">
+        <option value="">-Selecione o Valor</option>
+        <option value="1.00">1 R$</option>
+        <option value="2.00">2 R$</option>
+        <option value="3.00">3 R$</option>
+        <option value="4.00">4 R$</option>
+        <option value="5.00">5 R$</option>
+        <option value="6.00">6 R$</option>
+        <option value="7.00">7 R$</option>
+        <option value="8.00">8 R$</option>
+        <option value="9.00">9 R$</option>
+        <option value="10.00">10 R$</option>
+    </select>
+
+    <li> O Saldo do Cofrinho é de: <b id="b1">0.00</b>R$</li>
+    <li>A Quantidade de Operações foi de: <b id="b2">0</b></li>
+    <li>A Média dos Depósitos foi de: <b id="b3">0.00</b>R$</li><br>
+    <button onclick="Depositar()">Depositar</button>
+    <button onclick="Gastar()">Gastar Grana</button>
+</body>
+</html>
+<script>
+    var Saldo = 0
+    var Operacao = 0
+    function Depositar(){ 
+        
+        var Tabela = Number(Sel1.value)
+        var Media = Saldo / Operacao
+
+        if(Tabela != 0){
+        b1.innerHTML = `${(Saldo += Tabela).toFixed(2)}`
+        b2.innerHTML = `${Operacao += 1}`
+        b3.innerHTML = `${Media.toFixed(2)}`
+    }
+    }
+    function Gastar(){
+        b1.innerHTML = `${Saldo = 0}.00`
+        b2.innerHTML = `${Operacao = 0}`
+        b3.innerHTML = `${Media = 0}.00`
+    }
+</script>

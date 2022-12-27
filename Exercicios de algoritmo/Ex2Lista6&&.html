@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda do Governo</title>
+</head>
+<body>
+    <h2>AUXILIO GOVERNO</h2>
+    Renda do Usuário: <input id="RendaUsuario"><br>
+    Renda Familiar: <input id="RendaFamiliar"><br>
+    <button onclick="Ver()">Verificar Ajuda</button>
+</body>
+</html>
+<script>
+    function Ver(){
+        var Renda = Number(RendaUsuario.value)
+        var Familiar = Number(RendaFamiliar.value)
+
+        if(Renda <= 1050 && Familiar <= 2100){
+        alert('Você tem direito!')
+        
+        }else{
+        alert('Você não tem direito!')
+        }
+    }
+</script>

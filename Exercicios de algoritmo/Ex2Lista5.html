@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atração</title>
+</head>
+<body>
+    <h2>Atrações</h2>
+    <select id="Sel1">
+    <option value="Assistir o filme, Scarface">Cinema</option>
+    <option value="Assistir a peça O Fantasma da Ópera">Teatro</option>
+    <option value="Ir ao parque Hopi Hari">Parque</option>
+    <option value="- Ouvir o show da Lady Gaga">Show</option>
+    </select>
+    <button onclick="Ver()">Ver Atração</button>
+</body>
+</html>
+<script>
+    function Ver(){
+    var Atracao = Sel1.value
+    alert(`${Atracao}`)
+}
+</script>

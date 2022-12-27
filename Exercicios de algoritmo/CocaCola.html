@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca Cola</title>
+</head>
+<body>
+    <h2>Coca Cola</h2>
+    Quantas CocaCola você já tomou na vida: <input id="Quantidade1">
+    <div id="div1"></div>
+    <button onclick="Ver()">Ver</button>
+</body>
+</html>
+
+<script>
+ 
+    function Ver(){
+    div1.innerHTML = ""
+    var Contador = 0
+
+    var Quantidade = Quantidade1.value
+    while(Contador < Quantidade){
+    Contador++
+
+    div1.innerHTML += `<img src = "https://i.pinimg.com/originals/69/76/2e/69762e0afa7fafc308cb91ec1d13955c.jpg" style = width:20px;>`
+    }
+    }
+</script>

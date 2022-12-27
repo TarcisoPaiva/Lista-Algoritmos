@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingressos</title>
+</head>
+<body>
+    <button onclick = "Quatro()">4 Ingressos</button>
+    <button onclick = "Seis()">6 Ingressos</button>
+    <button onclick = "Oito()">8 Ingressos</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+
+<script>
+    function Quatro(){
+        var Ingresso = 4
+        var QuatroIngressos = 48 - 36
+        
+
+        div1.innerHTML = `Ao Comprar ${Ingresso} Ingressos, Você Pagou ${QuatroIngressos} Reais a menos`
+    }
+    function Seis(){
+        var Ingresso = 6
+        var SeisIngressos = 72 - 42
+
+        div2.innerHTML = `Ao Comprar ${Ingresso} Ingressos, Você Pagou ${SeisIngressos} Reais a menos`
+    }
+   function Oito(){
+        var Ingresso = 8
+        var OitoIngressos = 96 - 48
+
+        div3.innerHTML = `Ao Comprar ${Ingresso} ingressos, Voçê Pagou ${OitoIngressos} Reais a menos`
+   }
+</script>

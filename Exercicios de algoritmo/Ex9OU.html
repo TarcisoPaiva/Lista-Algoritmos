@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 9 OU</title>
+</head>
+<body>
+    <h2>Tipo De Alimentos</h2>
+    <select id="Sel1">
+        <option value="Bovina">Carne Bovina</option>
+        <option value="Soja">Soja</option>
+        <option value="Suina">Carne Suina</option>
+        <option value="Legumes">Legumes</option>
+        <option value="Peixe">Carne de Peixe</option>
+        <option value="Frutas">Frutas</option>
+        <option value="Ovos">Ovos</option>
+    </select>
+    <button onclick="Ver()">Tipo de alimentação</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+    function Ver(){
+        Tabela = Sel1.value
+
+        if(Tabela == 'Bovina' || Tabela == 'Suina' || Tabela == 'Peixe' || Tabela == 'Ovos'){
+        div1.innerHTML += '<br> Você não pode ser Vegano'
+        
+        }
+        if(Tabela == 'Soja' || Tabela == 'Legumes' || Tabela == 'Frutas'){
+        div1.innerHTML += '<br> Você pode ser vegano'
+
+        }if(Tabela == 'Soja' || Tabela == 'Legumes' || Tabela == 'Frutas' || Tabela == 'Ovos'){
+        div1.innerHTML += ' <br> Você pode ser vegetariano'
+        }
+        
+    }
+</script>

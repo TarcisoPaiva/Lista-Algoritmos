@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3 OU</title>
+</head>
+<body>
+    Renda Individual Do Usuário: <input id="Usuario1"><br>
+    Renda Familiar: <input id="Familiar1"><br>
+    <button onclick="Ver()">Terei o Beneficio</button>
+
+</body>
+</html>
+<script>
+    function Ver(){
+        var Usuario = Usuario1.value
+        var Familiar = Familiar1.value
+
+        if(Usuario <= 2000 || Familiar <= 3000){
+        alert('Você terá  direito ao Auxilio')
+        
+        }else{
+        alert('Você não tem direito ao auxilio')
+        }
+    }
+</script>

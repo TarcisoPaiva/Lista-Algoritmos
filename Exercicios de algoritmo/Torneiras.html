@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneira</title>
+</head>
+<body>
+    Torneira 1 <input id="Torneira1"><br>
+    Torneira 2 <input id="Torneira2"><br>
+    Torneira 3 <input id="Torneira3"><br>
+    <button onclick="Calcular()">Desperdicio</button>
+
+</body>
+</html>
+<script>
+    function Calcular(){
+        var Litros = 15
+        var Torneira01 = Number(Torneira1.value) * Litros
+        var Torneira02 = Number(Torneira2.value) * Litros
+        var Torneira03 = Number(Torneira3.value) * Litros
+        var Soma = Torneira01 + Torneira02 + Torneira03
+        alert(`Suas três torneiras juntas desperdiçaram ${Soma} Litros de agua`)
+    }
+</script>

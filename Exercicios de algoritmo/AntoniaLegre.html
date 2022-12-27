@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descontos Salarial</title>
+</head>
+<body>
+    Salário Bruto: <input id="Bruto">
+    <button onclick="Calcular()">Calcular Descontos</button>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var Salario = Number(Bruto.value)
+        var INSS = Salario * 0.9
+        var IR = Salario * 0.8
+        var Total = Salario - INSS - IR
+        alert(`A pesar de você ganhar ${Salario}, após os descontos ficará ${Total}`)
+
+        //O CÓDIGO AINDA ESTÁ ERRADO
+    }
+</script>

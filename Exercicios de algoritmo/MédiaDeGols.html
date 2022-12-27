@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Gols</title>
+</head>
+<body>
+    Quantidade de Partidas: <input id="QtdPartidas"><br><br>
+    Quantidade de Gols: <input id="QtdGols"><br>
+    <button onclick="Estudar()">Estudar Atacante</button>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Estudar(){
+        var Partidas = Number(QtdPartidas.value)
+        var Gols = Number(QtdGols.value)
+        var Media = Gols / Partidas
+        if(Media > 0.6){
+        div1.innerHTML = `Atacante de Futuro <br> A Média é de ${Media.toFixed(2)} gol(s) por partidas `        
+        }else if(Media <0.2){
+        div1.innerHTML = `Jogador Ruim <br> A Média é de ${Media.toFixed(2)} gol(s) por partidas`
+        }else{
+        div1.innerHTML = `Jogador Mediano <br> A Média é de ${Media.toFixed(2)} gol(s) por partidas`
+        }
+    }
+</script>

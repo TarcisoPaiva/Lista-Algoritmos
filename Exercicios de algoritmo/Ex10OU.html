@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 10 OU</title>
+</head>
+<body>
+    <h1>Preferência de empresas</h1>
+    Nome da empresa: <input id="Empresa1"><br>
+    Valor da Bolsa da empresa: <input id="Bolsa1"><br>
+    Valor do VR: <input id="VR1"><br>
+    Tempo de deslocamento da empresa para a SPTech: <input id="Tempo1" placeholder="Minutos"><br>
+    <button onclick="Ver()">É Preferida?</button>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Ver(){
+        var Empresa = Empresa1.value
+        var Bolsa = Bolsa1.value
+        var VR = VR1.value
+        var Tempo = Tempo1.value
+
+        if(Bolsa >= 1800 || VR >= 20 || Tempo <= 30){
+        div1.innerHTML = `A empresa ${Empresa} é uma das suas preferências`
+        
+        }else{
+        div1.innerHTML = `A empresa ${Empresa} está fora da sua lista`
+        }
+
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANCO12H</title>
+</head>
+<body>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/1015/1015070.png" width="200px"></div>
+    <h2>Notas Disponiveis 10R$ 50R$ 100R$</h2>
+
+    Valor do Saque: <input id="Saque1"><br>
+    <button onclick="Solicitar()">Solicitar Saque</button>
+    
+    
+</body>
+</html>
+<script>
+        var SaldoBanco = 1000
+    function Solicitar(){
+        
+        var Saque = Number(Saque1.value)
+
+        if(Saque > 0){
+        
+        if(Saque % 10 == 0){
+
+        if(SaldoBanco >= Saque){
+            SaldoBanco -= Saque
+            alert('Retire o dinheiro no lugar indicado')
+
+        }else{
+            alert('Valor solicitado maior que o disponivel na máquina')
+        }
+
+        }else{
+            alert('Valor não possivel devido as notas disponiveis')
+        }
+
+        }else{
+            alert('Não é possivel sacar menos que 0R$ ')
+        }
+        
+    }
+</script>

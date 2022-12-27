@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economizando</title>
+</head>
+<body>
+    <h2>Economizando</h2>
+    Valor da Economia: <input id="Valor">
+    <button onclick="Compra()">Poder de Compra</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Compra(){
+        var Economia = Valor.value
+        if(Economia <= 0){
+        div1.innerHTML = `Nada de compras`
+        }else if(Economia <= 100){
+        div1.innerHTML = `Viagem de ida e volta pra Praia Grande`
+        }else if(Economia < 4000){
+        div1.innerHTML = `Uma boa moto usada`
+        }else{
+        div1.innerHTML = `Mais alguma bobagem legal`
+        }
+
+    }
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco 24Hrs</title>
+</head>
+<body>
+    <h2>PRIMEIRA FASE</h2>
+    Quantidade de Notas de 10R$: <input id="NotaDez"><br>
+    Quantidade de Notas de 50R$: <input id="NotaCinquenta"><br>
+    Quantidade de Notas de 100R$: <input id="NotaCem"><br>
+    <button onclick="Iniciar()">Iniciar</button>
+
+    <h2>SEGUNDA FASE</h2>
+    <h3>Notas Disponiveis 10R$ 50R$ 100R$</h3>
+    Valor do Saque:<input id="Saque1"><br>
+    <button onclick="Solicitar()">Solicitar Saque</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+        var Dez = 0
+        var Cinquenta = 0
+        var Cem = 0
+        var SaldoBanco = 0
+
+    function Iniciar(){
+
+        Dez = Number(NotaDez.value)
+        Cinquenta = Number(NotaCinquenta.value)
+        Cem = Number(NotaCem.value)
+        SaldoBanco = Dez * 10 + Cinquenta * 50 + Cem * 100
+        div1.innerHTML = `${Dez} Notas de 10, ${Cinquenta} Notas de 50, ${Cem} Notas de 100, Saldo do Banco é ${SaldoBanco}R$`
+    }
+
+    function Solicitar(){
+
+        var Saque = Number(Saque1.value)
+
+        if(Saque > 0){
+        
+        if(Saque < SaldoBanco){
+        
+        if(Saque % 10 == 0 || Saque % 50 == 0 || Saque % 100 == 0){
+
+
+        }else{
+            alert('Valor não possivel devido as notas disponiveis')
+        }
+        
+        }else{
+            alert('Montante disponivel não atende a solicitação')
+        }
+
+        }else{
+            alert('Não é Possivel Sacar menos de 0R$')
+        }
+    }
+</script>

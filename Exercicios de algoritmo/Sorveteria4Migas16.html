@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorveteria 4Migas</title>
+</head>
+<body>
+  <input id="ReferenciaGrama"> : Valor de Refêrencia por grama do Sorvete<br>
+  <input id="PesoSorvete"> : Peso do Sorvete<br>
+  <input id="Cobertura" type="text" placeholder="'C' Maiúsculo"> : Tipo de Cobertura<br>
+  <input id="TipoSorvete" type="text" placeholder="'G' Maiúsculo"> : Tipo do Sorvete<br>
+  <button onclick="Calcular()">Calcular Custo do Sorteve</button>
+  <div id="div1"></div>
+
+</body>
+</html>
+<script>
+  function Calcular(){
+    var ValorGrama = Number(ReferenciaGrama.value)
+    var PesoDoSorvete = Number(PesoSorvete.value)
+    var TipoCobertura = Cobertura.value
+    var TipoDoSorvete = TipoSorvete.value
+
+    if(TipoDoSorvete == 'G'){
+      ValorGrama *= 1.11
+    }else{
+      ValorGrama *= 0.9
+    }
+
+    if(TipoCobertura != 'C'){
+      ValorGrama += 0.01
+    }
+
+    var ValorTotal = ValorGrama * PesoDoSorvete
+
+    if(ValorTotal > 10){
+      div1.innerHTML = `Seu Sorvete vai custar ${ValorTotal.toFixed(2)}R$ e vai comprometer a mesada`
+    }else{
+      div1.innerHTML = `Hoje você está manerando, e gastou somente ${ValorTotal.toFixed(2)}R$ `
+    }
+
+  }
+</script>

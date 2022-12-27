@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR2</title>
+</head>
+<body>
+    Destino de Viagem: <input id="Destino1">
+    <button onclick="Adicionar()">Adicionar</button><br>
+    <button onclick="Primeira()">Primeira Viagem</button>
+    <button onclick="Terceira()">Terceira Viagem</button>
+    <button onclick="Ultima()">Ultima Viagem</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VtViagem = []
+
+    function Adicionar(){
+        VtViagem.push(Destino1.value)
+        Destino1.value = ""
+    }
+    function Primeira(){
+        div1.innerHTML = `${VtViagem[0]}`
+
+        if(VtViagem.length == 0){
+            div1.innerHTML = `Ainda não Viajou`
+    }
+    }
+    function Terceira(){
+        div1.innerHTML = `${VtViagem[2]}`
+
+        if(VtViagem.length < 3){
+            div1.innerHTML = `Ainda não fez a terceira viagem`
+        }
+    }
+    function Ultima(){
+        div1.innerHTML = `${VtViagem[VtViagem.length-1]}`
+        if(VtViagem.length == 0){
+            div1.innerHTML = `Ainda não Viajou`
+        }
+        
+    }
+</script>

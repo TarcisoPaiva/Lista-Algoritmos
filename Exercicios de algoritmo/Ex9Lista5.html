@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbys</title>
+</head>
+<body>
+    <h1>HOBBYS</h1>
+    <select id="Sel1">
+    <option value="">-Selecione um Hobby</option>
+    <option value="https://cdn-icons-png.flaticon.com/512/5600/5600933.png">Dançar</option>
+    <option value="https://cdn-icons-png.flaticon.com/512/141/141070.png">Jogar Video Game</option>
+    <option value="https://cdn-icons-png.flaticon.com/512/5601/5601230.png">Assistir Seriados</option>
+    <option value="https://cdn-icons-png.flaticon.com/512/2131/2131882.png">Ouvir Rock</option>
+    </select>
+
+    <select id="Sel2">
+    <option value="">-Vezes</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    </select>
+    
+    <button onclick="Ver()">Ver Hobby</button>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Ver(){
+        var Vezes = Sel2.value
+        var Lista = Sel1.value
+
+        if(Lista != ''){
+        if(Vezes == 1){
+            div1.innerHTML = `<img src = ${Lista} style="width: 50px;">`
+        
+        }else if(Vezes == 2){
+            div1.innerHTML = `<img src = ${Lista} style="width: 100px;">`
+        
+        }else if(Vezes == 3){
+            div1.innerHTML = `<img src = ${Lista} style="width: 140px;">`
+       
+        }else if(Vezes == 4){
+            div1.innerHTML = `<img src = ${Lista} style="width: 190px;">`
+        
+        }else if(Vezes == 5){
+            div1.innerHTML = `<img src = ${Lista} style="width: 260px;">`
+        
+        }else if(Vezes == 6){
+            div1.innerHTML = `<img src = ${Lista} style="width: 300px;">`
+        }
+    }
+}
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atacante</title>
+</head>
+<body>
+    Quantidade de partidas que o Atacante jogou: <input id="QtdPartidas">
+    Quantidade de gols: <input id="QtdGols"><br>
+    <button onclick="Estudar()">Estudar atacante</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Estudar(){
+        var Partidas = Number(QtdPartidas.value)
+        var Gols = Number(QtdGols.value)
+        var Media = Gols / Partidas
+
+        if(Media < 0.2){
+        div1.innerHTML = `Melhor mudar de posição <br> <img src = "https://static.vakinha.com.br/uploads/vakinha/image/16033/ceni_art.png?ims=700x410">`
+        }else if(Media < 0.6){
+        div1.innerHTML = `Atacante bom <br> <img src = "https://www.imagensempng.com.br/wp-content/uploads/2022/03/3401-1.png">`
+        }else{
+        div1.innerHTML = `Atacante de Futuro <br> <img src = "https://www.pngall.com/wp-content/uploads/4/Cristiano-Ronaldo-PNG-Free-Download.png">`
+        }
+
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorveteria</title>
+</head>
+<body>
+    Valor de Refêrencia Grama do Sorvete:<input id="GramaSorvete">
+    Peso do Sorvete: <input id="PesoSorvete">
+    Tipo de Cobertura: <input id="Cobertura" type="text" placeholder="'C' Maiúsculo">
+    <button onclick="Calcular()">Calcular o Custo do Sorvete</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        var ReferenciaGrama = Number(GramaSorvete.value)
+        var Peso = Number(PesoSorvete.value)
+        var TipoCobertura = Cobertura.value
+
+        if(TipoCobertura != 'C'){
+           ReferenciaGrama += 0.005
+        }
+        var ValorTotal = ReferenciaGrama * Peso
+
+        if(ValorTotal > 10){
+            div1.innerHTML = `Esse Sorvete vai custar ${ValorTotal.toFixed(2)}R$ e vai comprometer a mesada`
+        }else{
+            div1.innerHTML = `Hoje você está manerando e gastou somente ${ValorTotal.toFixed(2)}R$`
+        }
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex8</title>
+</head>
+<body>
+    <h2>Aprovado ou Reprovado?</h2>
+    <button onclick="Gerar()">Gerar Nota</button>
+    <button onclick="Frequencia()">Frequencia</button>
+    <button onclick="Aprovado()">Aprovado?</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
+<script>
+    var Nota = 0
+    var Freq = 0
+
+    function Gerar(){
+
+        var Nota = (Math.random() * 10).toFixed(0)
+        div1.innerHTML = `Nota: ${Nota}`
+    }
+
+    function Frequencia(){
+        
+        var Freq = (Math.random() * 100).toFixed(0)
+        div2.innerHTML = `Frequencia: ${Freq}`
+    }
+
+    function Aprovado(){
+        div1.innerHTML = ""
+        div2.innerHTML = ""
+
+        if(Nota < 6 || Freq < 75){
+             alert('Aluno Reprovado')   
+        }else if( Nota >= 6 && Freq >= 75){
+            alert('Aluno Aprovado')
+        }
+        
+    }
+
+</script>

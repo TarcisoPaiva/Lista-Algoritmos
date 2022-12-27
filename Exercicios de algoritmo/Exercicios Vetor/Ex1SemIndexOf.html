@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    Digite o nome da fruta: <input id="Fruta1">
+    <button onclick="Pesquisar()">Pesquisar</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>
+<script>
+    var vtFruta = ["abacaxi","laranja","limao","banana"]
+    function Pesquisar(){
+
+        var Fruta = Fruta1.value
+        var Contador = 0
+        Fruta1.value = ""
+
+        for(var index = 0; index < vtFruta.length; index++){
+
+            if(vtFruta[index] == Fruta){
+                Contador++
+
+            }
+            if(Contador > 0){
+                div1.innerHTML = `A Fruta <b>${Fruta}</b> existe na lista`
+            }else{
+                div1.innerHTML = `A Fruta <b>${Fruta}</b> não foi encontrada na existe na lista`
+            }
+            
+        }
+    }
+</script>

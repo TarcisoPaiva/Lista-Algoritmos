@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor16</title>
+</head>
+<body>
+    <h2>Clássico</h2>
+    Digite um número Qualquer: <input id="Digite1">
+    <button onclick="Analisar()">Analisar Histórico</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body> 
+</html>
+<script>
+    var VtNum = []
+
+    function Analisar(){
+
+        var Digite = Number(Digite1.value)
+        var Maior = 0
+        var Menor = 9999999999999999999999
+
+        if(Digite == ""){
+            alert('Campo Vazio!')
+        }else if(Number.isNaN(Digite)){
+            alert('Digite um número')
+        }else{
+            VtNum.push(Digite)
+            Digite1.value = ""
+            div1.innerHTML = ""
+
+            for(var index = 0; index < VtNum.length; index++){
+
+                div1.innerHTML += `${index+1}° Número: ${VtNum[index]}<br>`
+
+                if(VtNum[index] > Maior){
+                    Maior = VtNum[index]
+                }
+                if(VtNum[index] < Menor){
+                    Menor = VtNum[index]
+                }
+                div2.innerHTML = `<br><br> Maior: ${Maior}<br> Menor: ${Menor}`
+            }
+           
+        }
+    }
+</script>

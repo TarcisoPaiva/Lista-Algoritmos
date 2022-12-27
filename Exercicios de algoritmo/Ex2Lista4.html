@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Social</title>
+</head>
+<body>
+    <h2>Classe Social</h2>
+    Renda Familiar: <input id="RendaFamiliar">
+    <button onclick="Analisar()">Analisar Renda</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var Renda = Number(RendaFamiliar.value)
+
+        if(Renda <= 250){
+            div1.innerHTML = `CLASSE E`
+        }else if(Renda <= 900){
+            div1.innerHTML = `CLASSE D`
+        }else if(Renda <= 2500){
+            div1.innerHTML = `CLASSE C`
+        }else if(Renda <= 9500){
+            div1.innerHTML = `CLASSE B`
+        }else{
+            div1.innerHTML = `CLASSE A`
+        }
+    }
+</script>

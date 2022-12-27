@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Renda</title>
+</head>
+<body>
+    <h2>Avaliação de Renda</h2>
+    Idade do Usuario: <input id="Idade1">
+    Salário do Usuario: <input id="Salario1"><br>
+    <button onclick="Analisar()">Analisar Situação</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var Idade = Number(Idade1.value)
+        var Salario = Number(Salario1.value)
+
+        if(Idade < 18 && Salario < 2500){
+        div1.innerHTML = `<b>Menor de Idade e Liso</b>`
+        
+        }else if(Idade < 18 && Salario >= 2500){
+        div1.innerHTML = `<b>Menor de Idade e Ostentação</b>`
+        
+        }else if(Idade >= 18 && Salario < 3500){
+        div1.innerHTML = `<b>Maior de Idade e Liso</b>`
+        
+        }else if(Idade >=18 && Salario <= 7000){
+        div1.innerHTML = `<b>Maior de Idade e ostentação</b>`
+        
+        }else if(Idade >=18 && Salario > 7000){
+        div1.innerHTML = `<b>Maior de Idade e Mega Ostentação</b>`
+        }
+    }
+</script>

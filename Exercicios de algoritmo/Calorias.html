@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorias</title>
+</head>
+<body>
+    Quantos pães: <input id="QtdPaes"><br>
+    Casquinhas: <input id="QtdCasquinhas"><br>
+    Minutos de caminhada: <input id="MinCaminhada"><br>
+    Minutos de musculação: <input id="MinAcademia"><br>
+    <button onclick="Calcular()">Calcular Calorias</button>
+
+</body>
+</html>
+<script>
+    function Calcular(){
+        var Pao = Number(QtdPaes.value) * 100
+        var CasquinhaMC = Number(QtdCasquinhas.value) * 300
+        var Caminhada = Number(MinCaminhada.value) * 50 
+        var Academia = Number(MinAcademia.value) * 30
+        var SomaTotal = Pao + CasquinhaMC - Caminhada - Academia
+
+        alert(`Entre calorias que ganhou e perdeu, seu saldo de calorias no dia é de ${SomaTotal} calorias`)
+    }
+</script>

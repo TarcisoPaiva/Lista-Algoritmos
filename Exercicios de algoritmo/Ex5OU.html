@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX 5 OU</title>
+</head>
+<body>
+    Temperatura Atual: <input id="Atual1">
+    <button onclick="Analisar()">Analisar Clima</button>
+</body>
+</html>
+<script>
+    function Analisar(){
+        var Atual = Atual1.value
+
+        if(Atual <21 || Atual >24){
+        alert('Alerta de Desconforto')
+
+        if(Atual <21){
+        alert('As Pessoas vão ter Hiportemia')
+        
+        }else{
+        alert('As Pessoas vão derreter')
+        }
+        
+        }
+    }
+</script>

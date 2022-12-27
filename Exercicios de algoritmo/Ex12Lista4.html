@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliques</title>
+</head>
+<body>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/63/63576.png" style="width: 200px;"></div>
+    <div>Você já clicou <b id="b1">0</b> Vezes</div><br>
+    <div id="div1">Nenhum Clique</div><br>
+    <button onclick="Clicar()">ClicaNeu</button>
+</body>
+</html>
+<script>
+    var Cliques = 0
+
+    function Clicar(){
+
+    b1.innerHTML = `${Cliques += 1}`
+    if(Cliques < 5){
+    div1.innerHTML =  ' Dedo Fraquinho hein'
+    
+    }else if(Cliques < 10){
+    div1.innerHTML = ` Dedo bom mano!`
+    
+    }else if(Cliques < 15){
+    div1.innerHTML = `Gosta de clicar hein!!`
+    
+    }else{
+    div1.innerHTML = `Eita Dedo Nervoso`
+    }
+        
+    }
+</script>

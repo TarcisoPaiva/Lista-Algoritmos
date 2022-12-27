@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrida</title>
+</head>
+<body>
+    <h2>Corrida</h2>
+    <button onclick="Comecar()">Começar</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+
+    var TempoPiloto1 = []
+    var CombustivelPiloto1 = []
+
+    function Comecar(){
+        
+        div1.innerHTML = ""
+
+        for(var index = 0; index < 10; index++){
+
+            var Velocidade = (Math.random()*40 + 230).toFixed(0)
+            var Tempo = 20 / Velocidade
+            var Combustivel = Velocidade / 250*5
+
+            TempoPiloto1.push(Tempo)
+            CombustivelPiloto1.push(Combustivel)
+            
+        }
+        for(index = 9; index >= 0; index--){
+            
+          
+
+            
+            div1.innerHTML += `${index+1}<br>`
+        }
+
+    }
+</script>

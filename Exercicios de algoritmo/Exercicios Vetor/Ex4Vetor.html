@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR4</title>
+</head>
+<body>
+    Digite seus filmes favoritos: <input id="Filmes1">
+    <button onclick="Cadastrar()">Cadastrar Filme</button><br>
+    <button onclick="Ver()">Ver Filmes Favoritos</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VtFilmes = []
+
+    function Cadastrar(){
+        var Filmes = Filmes1.value
+        if(Filmes == ""){
+            alert('Campo Filme Vazio')
+
+        }else{
+        VtFilmes.push(Filmes)
+        Filmes1.value = ""
+        div1.innerHTML = ""
+    }
+
+    }
+
+    function Ver(){
+        if(VtFilmes == ""){
+            alert('Nenhum Filme Cadastrado')
+
+        }else{
+
+        div1.innerHTML += `Total de Filmes: ${VtFilmes.length}<br>`
+        div1.innerHTML += `O que mais gosta: ${VtFilmes[0]}<br>`
+        div1.innerHTML += `E desses, o que menos gosta é: ${VtFilmes[VtFilmes.length-1]}` 
+        }    
+       
+
+    }
+</script>

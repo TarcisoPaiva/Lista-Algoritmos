@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <select id="Sel1" onchange="Mostrar()">
+    <option value="2">Tabuada 2</option>
+    <option value="3">Tabuada 3</option>
+    <option value="4">Tabuada 4</option>
+    <option value="5">Tabuada 5</option>
+    <option value="6">Tabuada 6</option>
+    <option value="7">Tabuada 7</option>
+    <option value="8">Tabuada 8</option>
+    <option value="9">Tabuada 9</option>
+    </select>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Mostrar(){
+    var Multiplica = Number(Sel1.value)
+    
+    if(Multiplica != ''){
+    div1.innerHTML = `1 x ${Multiplica} = ${Multiplica * 1}<br>
+        2 x ${Multiplica} = ${Multiplica * 2}<br>
+        3 x ${Multiplica} = ${Multiplica * 3}<br>
+        4 x ${Multiplica} = ${Multiplica * 4}<br>
+        5 x ${Multiplica} = ${Multiplica * 5}<br>
+        6 x ${Multiplica} = ${Multiplica * 6}<br>
+        7 x ${Multiplica} = ${Multiplica * 7}<br>
+        8 x ${Multiplica} = ${Multiplica * 8}<br>
+        9 x ${Multiplica} = ${Multiplica * 9}<br>
+        `  
+    }
+    }
+</script>

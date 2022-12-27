@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingressos 2</title>
+</head>
+<body>
+    Valor do Ingresso <input id="ValorDoIngresso">
+    Quantidade de Ingressos <input id="QtdIngressos">
+    <button onclick="RealizarCompra()">Realizar Comprar</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function RealizarCompra(){
+        var IngressoADD = QtdIngressos.value - 2
+        var VLdoIngresso = 12 
+
+        div1.innerHTML = `Ao comprar ${QtdIngressos.value} ingressos, voçê pagará ${VLdoIngresso} reias`
+    }
+</script>

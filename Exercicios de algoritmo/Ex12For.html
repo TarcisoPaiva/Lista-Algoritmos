@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12</title>
+</head>
+<body>
+    Quantidade de Coca-Cola: <input id="Coca1"><br>
+    <button onclick="Ver()">Ver Quantidade</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Ver(){
+        div1.innerHTML = ""
+        var Quantidade = Number(Coca1.value)
+
+        for(var Contador = 0; Contador < Quantidade; Contador++){
+            div1.innerHTML += `<img src="https://i.pinimg.com/originals/69/76/2e/69762e0afa7fafc308cb91ec1d13955c.jpg" style = width:70px;>`
+        }
+
+    }
+</script>

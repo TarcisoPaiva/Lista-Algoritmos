@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR10</title>
+</head>
+<body>
+    Nome das Linhas: <input id="Linhas1">
+    <button onclick="Gravar()">Gravar Busão</button><br>
+    Pesquise a Linha: <input id="Pesquise1">
+    <button onclick="Pesquisar()">Pesquisar Linha</button>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+</body>
+</html>
+<script>
+
+    var VtBus = []
+
+    function Gravar(){
+        var Linhas = Linhas1.value
+
+        if(Linhas == ""){
+            alert('Campo Nome das Linhas Vazio!')
+        }else{
+            VtBus.push(Linhas)
+            Linhas1.value = ""
+            div1.innerHTML = ""
+            div2.innerHTML = ""
+            div3.innerHTML = ""
+
+            for(var Contador = VtBus.length-1; Contador >= 0; Contador--){
+            div1.innerHTML += `${Contador+1}- Busão foi ${VtBus[Contador]}<br>`
+        }
+        }  
+    }
+    function Pesquisar(){
+        
+        var Pesquise = Pesquise1.value
+        var Vezes = 0
+        
+        if(Pesquise == ""){
+            alert('Campo de Pesquisar Linha Vazio!')
+        }else if(VtBus == ""){
+            alert('Impossivel Pesquisar, Nenhuma linha cadastrada')
+        }else if(VtBus.indexOf(Pesquise) == -1){
+            alert('Você nunca pegou essa linha')
+        }else{
+            
+            for(var Contador1 = 0; Contador1 < VtBus.length; Contador1++){
+            if(VtBus[Contador1] == Pesquise){
+                Vezes++
+                div2.innerHTML = `<br>Você Pegou essa Linha <b>${Vezes} Vezes</b> <br><br>Nessa Ordem:`
+                div3.innerHTML += `${Contador1+1}º Vez  `    
+                     
+            }
+            }
+        }      
+        }
+</script>

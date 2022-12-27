@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20</title>
+</head>
+<body>
+    <h2>Curto 3 e 5</h2>
+    <button onclick="Curto()">Curto 3 e 5</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Curto(){
+        var Contador = 0
+    
+        while(Contador <= 100){ 
+        
+      
+        if(Contador % 5 == 0 && Contador % 3 == 0){
+        div1.innerHTML += `É TRI PENTA <br>`
+        
+        }else if(Contador % 3 == 0){
+        div1.innerHTML += `É TRI <br>`
+         
+        }else if(Contador % 5 == 0){
+        div1.innerHTML += `É PENTA <br>`
+        
+        }else{
+        div1.innerHTML += `${Contador} <br>`
+        }
+        Contador++
+        }
+    }
+</script>

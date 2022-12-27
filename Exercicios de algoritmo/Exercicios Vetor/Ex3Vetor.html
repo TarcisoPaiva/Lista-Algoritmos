@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VETOR3</title>
+</head>
+<body>
+    Bairros onde morou: <input id="Bairro1">
+    <button onclick="Cadastrar()">Cadastrar Bairro</button><br><br>
+    Número do Bairro: <input id="Numero1">
+    <button onclick="Relembrar()">Relembrar Moradia</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    var VetorBairros = []
+
+    function Cadastrar(){
+        var Bairro = Bairro1.value
+        if(Bairro == ""){
+            alert('Campo Bairro Vazio')
+        
+        }else{
+        VetorBairros.push(Bairro)
+        Bairro1.value = ""
+        }
+        
+        
+    }
+
+    function Relembrar(){
+        var Numero = Numero1.value
+
+        if(Numero == ""){
+            alert('Campo Número Vazio')
+        }else{
+            
+            if(Numero <= VetorBairros.length){
+            div1.innerHTML = `O ${Numero}º Bairro foi o ${VetorBairros[Numero-1]}`
+        
+        }else if(Numero > VetorBairros.length){
+           div1.innerHTML = `Você ainda não morou num ${Numero}º bairro!"`
+        }
+        }
+
+        
+    }
+</script>

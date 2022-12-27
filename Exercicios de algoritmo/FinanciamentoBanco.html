@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaciamento</title>
+</head>
+<body>
+    <style>
+        p{
+            color: red;
+        }
+    </style>
+    <h2>Finaciamento no Banco</h2>
+    Renda Familiar:<input id="RendaFamiliar">
+    Valor Da Prestação: <input id="ValorPrestacao">
+    <button onclick="Verificar()">Verificar Finaciamento</button>
+    <div id="div1"></div>
+   
+</body>
+</html>
+<script>
+    function Verificar(){
+        var Prestacao = Number(ValorPrestacao.value) / Number(RendaFamiliar.value) * 100
+        
+        div1.innerHTML = `A prestação corresponde a ${Prestacao.toFixed(0)} % da Renda Familiar`
+
+        if(Prestacao > 30){
+        div1.innerHTML +=  '<p><b>Será necessário complementar a renda familiar</b></p>'
+        }
+    }
+</script>

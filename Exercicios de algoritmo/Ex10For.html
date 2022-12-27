@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10</title>
+</head>
+<body>
+    <h2>Números Cabalisticos</h2>
+    <button onclick="Num()">Números cabalisticos</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Num(){
+
+        for(var Contador = 1; Contador <= 15; Contador++){
+
+            if(Contador != 3 && Contador != 4 && Contador != 7 && Contador != 10 && Contador != 12){
+                div1.innerHTML += `${Contador}<br>`
+            }
+        }
+
+    }
+</script>

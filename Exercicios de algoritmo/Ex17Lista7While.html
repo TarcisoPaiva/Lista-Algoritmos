@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 17</title>
+</head>
+<body>
+    <h2>Caronas</h2>
+    Quantas Pessoas vão entrar no carro: <input id="Pessoas1"><br>
+    Capacidade do carro: <input id="Capacidade1"><br>
+    <button onclick="Carona()">#Partiu Carona</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Carona(){
+        div1.innerHTML = ""
+
+        var Contador = 0
+        var Pessoas = Number(Pessoas1.value)
+        var Capacidade = Number(Capacidade1.value)
+
+        while(Contador < Pessoas){
+        Contador++
+
+        if(Contador <= 1 ){
+        div1.innerHTML += ` Entrou o ${Contador}º Passageiro(que é o motorista(a)<br>`
+        
+        }else if(Contador <= Capacidade){
+        div1.innerHTML += ` Entrou o ${Contador}º Passageiro<br>`
+        
+        }else if(Contador > Capacidade){
+        div1.innerHTML += `O ${Contador}º Passageiro terá que esperar<br>`
+        }
+        }
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação do Ano</title>
+</head>
+<body>
+    <h2>Estações do ano</h2>
+    Mês do ano: <input id="MesDoAno" type="text" placeholder="Primeira letra é Maiúsculo">
+    <button onclick="Exibir()">Exibir</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function Exibir(){
+        var Mes = MesDoAno.value
+
+        if(Mes == 'Março'){
+        div1.innerHTML = `Estação é OUTONO <br> <img src = "https://cdn-icons-png.flaticon.com/128/282/282489.png">`
+        }else if(Mes == 'Abril'){
+        div1.innerHTML = `Estação é OUTONO <br> <img src = "https://cdn-icons-png.flaticon.com/128/282/282489.png">`
+        }else if(Mes == 'Maio'){
+        div1.innerHTML = `Estação é OUTONO <br> <img src = "https://cdn-icons-png.flaticon.com/128/282/282489.png">`
+        }else if(Mes == 'Junho'){
+        div1.innerHTML = `Estação é INVERNO <br> <img src = "https://cdn-icons-png.flaticon.com/128/6739/6739380.png">`
+        }else if(Mes == 'Julho'){
+        div1.innerHTML = `Estação é INVERNO <br> <img src = "https://cdn-icons-png.flaticon.com/128/6739/6739380.png">`
+        }else if(Mes == 'Agosto'){
+        div1.innerHTML = `Estação é INVERNO <br> <img src = "https://cdn-icons-png.flaticon.com/128/6739/6739380.png">`
+        }else if(Mes == 'Setembro'){
+        div1.innerHTML = `Estação é PRIMAVERA <br> <img src = "https://cdn-icons-png.flaticon.com/128/4187/4187717.png">`
+        }else if(Mes == 'Outubro'){
+        div1.innerHTML = `Estação é PRIMAVERA <br> <img src = "https://cdn-icons-png.flaticon.com/128/4187/4187717.png">`
+        }else if(Mes == 'Novembro'){
+        div1.innerHTML = `Estação é PRIMAVERA <br> <img src = "https://cdn-icons-png.flaticon.com/128/4187/4187717.png">`
+        }else if(Mes == 'Dezembro'){
+        div1.innerHTML = `Estação é VERÃO <br> <img src = "https://cdn-icons-png.flaticon.com/128/5903/5903519.png">`
+        }else if(Mes == 'Janeiro'){
+        div1.innerHTML = `Estação é VERÃO <br> <img src = "https://cdn-icons-png.flaticon.com/128/5903/5903519.png">`
+        }else if(Mes == 'Fevereiro'){
+        div1.innerHTML = `Estação é VERÃO <br> <img src = "https://cdn-icons-png.flaticon.com/128/5903/5903519.png">`
+        }
+
+    }
+</script>

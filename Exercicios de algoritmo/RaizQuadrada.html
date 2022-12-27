@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz Quadrada</title>
+</head>
+<body>
+  
+    Digite um número <input id="numero">
+    <button onclick="quadrada()">Exiba a raiz quadrada</button>
+    <button onclick="cubica()">Exiba a raiz cúbica</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    function quadrada(){
+        var RaizQuadrada = Number(numero.value) ** (1/2)
+        div1.innerHTML = `A Raiz Quadrada é ${RaizQuadrada}`
+    }
+    function cubica(){
+        var RaizCubica = Number(numero.value) ** (1/3)
+        div1.innerHTML = `A Raiz Cúbica é ${RaizCubica}`
+    }
+</script>

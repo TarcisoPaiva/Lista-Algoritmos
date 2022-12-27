@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    <h2>Musculação</h2>
+    Quantos em Quantos dias você treina: <input id="DiasTreinados1"><br>
+    <button onclick="Exibir()">Exibir Rotina Mensal</button>
+    <div id="div1"></div>
+</body>
+</html>
+<script>
+    
+    function Exibir(){
+        div1.innerHTML = ""
+        var Contador = 0
+
+        var DiasTreinados = Number(DiasTreinados1.value)
+
+        while(Contador < 30){
+       
+
+        if(Contador % DiasTreinados == 0){
+        div1.innerHTML += `Dia ${Contador} - Musculação <br>`
+        
+        }else{
+        div1.innerHTML += `Dia ${Contador} - Comer, Dormir etc<br>`
+        }
+        Contador++
+    }
+    }
+</script>

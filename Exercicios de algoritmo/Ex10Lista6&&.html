@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilotos</title>
+</head>
+<body>
+    <div><img src="https://cdn-icons-png.flaticon.com/512/2513/2513166.png" width="150px;"></div>
+    <H2>INTERVALO DA ALTURA</H2>
+    Altura Inicial: <input id="Inicial1"><br>
+    Altura Final: <input id="Final1"><br><br>
+
+    <h2>CANDIDATO A PILOTO</h2>
+    Nome do Piloto: <input id="Nome1"><br>
+    Altura do Piloto: <input id="Altura1"><br>
+    <button onclick="Ver()">Analisar Piloto</button>
+    <div id="div1"></div>
+
+</body>
+</html>
+<script>
+    function Ver(){
+        var Inicial = Number(Inicial1.value)
+        var Final = Number(Final1.value)
+        var Altura = Number(Altura1.value)
+        var Nome = Nome1.value
+
+        if(Altura < Inicial || Altura > Final){
+        div1.innerHTML += `Infelizmente o candidato ${Nome} com altura de ${Altura} não atende os requisitos<br><br>`
+        
+        }else{
+        div1.innerHTML += `O candidato ${Nome} com altura de ${Altura} participará do processo de seleção de piloto<br><br>`
+        }
+    }
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball Z</title>
+</head>
+<body>
+    Nome do Guerreiro: <input id="NomeGuerreiro">
+    KI normal do Guerreiro: <input id="KInormal">
+    <button onclick="KI()">Ver KI em cada forma</button>
+</body>
+</html>
+<script>
+    function KI(){
+        var Sayadin = Number(KInormal.value) * 50
+        var Sayadin2 = Number(KInormal.value) * 100
+
+        window.alert(`O KI Normal do guerreiro ${NomeGuerreiro.value} é ${KInormal.value}`)
+        window.alert(`O KI do Guerreiro ${NomeGuerreiro.value} em Super Sayadin é ${Sayadin}`)
+        window.alert(`O KI do Guerreiro ${NomeGuerreiro.value} em Super Sayadin 2 é ${Sayadin2}`)
+    }
+</script>
